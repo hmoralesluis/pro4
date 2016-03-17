@@ -92,7 +92,10 @@
             $(owlElementID + " .active .caption .fadeInRight-2").stop().delay(700).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
             $(owlElementID + " .active .caption .fadeInRight-3").stop().delay(1000).animate({ opacity: 1, left: "0" }, { duration: 800, easing: "easeOutCubic" });
         }
-        
+
+
+
+
         $(owlElementID).owlCarousel({
             
             autoPlay: 5000,
@@ -112,7 +115,7 @@
                 fadeInLeft();
                 fadeInRight();
             },
-            
+
             afterMove: function() {
                 fadeIn();
                 fadeInDown();
@@ -120,7 +123,7 @@
                 fadeInLeft();
                 fadeInRight();
             },
-            
+
             afterUpdate: function() {
                 fadeIn();
                 fadeInDown();
@@ -128,11 +131,11 @@
                 fadeInLeft();
                 fadeInRight();
             },
-            
+
             startDragging: function() {
                 dragging = true;
             },
-            
+
             afterAction: function() {
                 fadeInReset();
                 fadeInDownReset();
@@ -190,16 +193,18 @@
 
         $("#owl-brands").owlCarousel({
             transitionStyle: "fade",
-            autoPlay: 1000,
+            autoPlay: 800,
             stopOnHover: true,
             rewindNav: true,
             rewindSpeed: 0,
 
 
 
-            items: 7,
+            items: 6,
             pagination: false,
             itemsTablet : [768, 4],
+
+
         });
 
         $('#owl-single-product').owlCarousel({
