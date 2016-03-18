@@ -47,7 +47,6 @@
 
 
 <div class="wrapper">
-
     @yield('content')
 </div><!-- /.wrapper -->
 

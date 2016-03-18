@@ -122,7 +122,7 @@
                                         @foreach($messages as $msg)
                                             <div class="itemdiv commentdiv">
                                             <div class="user">
-                                                <img alt="{{$msg->name}}" src="{{url('shop/assets/avatars/avatar2.png')}}" />
+                                                <img alt="{{$msg->name}}" src="{{url('admin/assets/avatars/avatar2.png')}}" />
                                             </div>
 
                                             <div class="body">
@@ -146,11 +146,7 @@
                                             </div>
 
                                             <div class="tools">
-                                                <a href="#" class="btn btn-minier btn-info">
-                                                    <i class="icon-only icon-pencil"></i>
-                                                </a>
-
-                                                <a href="#" class="btn btn-minier btn-danger">
+                                                <a href="{{url('admin/contact/delete/' . $msg->id )}}" class="btn btn-minier btn-danger">
                                                     <i class="icon-only icon-trash"></i>
                                                 </a>
                                             </div>
