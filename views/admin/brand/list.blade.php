@@ -1,12 +1,12 @@
 @extends('admin.master')
 
 @section('page_title')
-    <h3 class="header smaller lighter blue">Marca patrosinadora</h3>
+    <h3 class="header smaller lighter blue">Marcas del banner</h3>
 @endsection
 @section('content')
 
         <div class="table-header">
-           Todas las marcas patrocinadoras
+           Todas las marcas del banner
               <a class="btn btn-success" href="{{url('admin/brand/create')}}"> Nueva   </a>
         </div>
 

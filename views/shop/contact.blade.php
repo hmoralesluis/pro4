@@ -20,8 +20,10 @@
 
 
 
-                        <h2 class="bordered">Deje su mensaje</h2>
-                        <p>Contacte con nosotros</p>
+                        <h2 class="bordered">Contacto</h2>
+                        <p>Estamos aquí para responder cualquier pregunta uqe pueda tener.</p>
+
+
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -34,6 +36,7 @@
                             </div>
                         @endif
 
+                        <h3>Sus datos</h3>
 
                         <form action="{{url('contact_submit')}}" method="post" id="contact-form" class="contact-form cf-style-1 inner-top-xs">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -79,11 +82,11 @@
                         <ul class="list-unstyled operation-hours">
                             <li class="clearfix">
                                 <span class="day">Tel: </span>
-                                <span class="  hours">+34938771199 </span>
+                                <span class="  hours">+34 938771199 </span>
                             </li>
                             <li class="clearfix">
                                 <span class="day">Fax:</span>
-                                <span class="  hours">+34938771714</span>
+                                <span class="  hours">+34 938771714</span>
                             </li>
                         </ul>
                         </br>

@@ -41,7 +41,7 @@
 
                     <form method="get" action="{{url('/search')}}">
                         <div class="control-group">
-                            <input name="search" class="search-field" placeholder="Buscar por numero de partes" />
+                            <input name="search" class="search-field" placeholder="Buscar por numero de parte" />
                             <button type="submit" class="le-button huge search-button"></button>
                         </div>
                     </form>
@@ -53,7 +53,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-2  top-cart-row no-margin">
                     <div class="contact-row">
                         <div class="phone inline">
-                            <i class="fa fa-phone"></i> Tel: +34938771199
+                            <i class="fa fa-phone"></i> Tel: +34 938771199
                         </div>
                         <div class="contact inline">
                             <i class="fa fa-envelope"></i> info@<span class="le-color">novateksilar.com</span>
@@ -65,7 +65,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-3  top-cart-row ">
                 <div class="contact-row">
                     <div class="phone inline">
-                        <i class="fa fa-phone"></i> Fax: +34938771714
+                        <i class="fa fa-phone"></i> Fax: +34 938771714
                     </div>
 
                     <div class="contact inline">
@@ -105,7 +105,7 @@
                                                 <div class="col-xs-12 col-sm-3">
                                                  <h2></h2>
                                                     <ul>
-                                                       @for($j = $i * 27; $j < ($i * 27) + 27 && $j < count($categories); $j++ )
+                                                       @for($j = $i * 28; $j < ($i * 28) + 28 && $j < count($categories); $j++ )
                                                             <li><a href="{{url('category/'. $categories[$j]->id)}}">{{$categories[$j]->name}}</a></li>
                                                        @endfor
                                                     </ul>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('page_title')
-    <h3 class="header smaller lighter blue">Cambiar marca patrosinadora</h3>
+    <h3 class="header smaller lighter blue">Cambiar marca del banner</h3>
 @endsection
 
 @section('content')

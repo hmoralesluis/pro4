@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-xs-12 col-md68 col-lg68 col-sm68">
                     <section id="who-we-are" class="section m-t-0">
-                        <h2>Quienes somos</h2>
+                        <h2>Que ofrecemos</h2>
                         <ul>
                             <li>
                                 <p>

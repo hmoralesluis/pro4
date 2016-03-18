@@ -25,8 +25,8 @@
                         <div class="widget">
                             <h3>Telefonos</h3>
                             <ul>
-                                <li><a >Tel: +34938771199 </a></li>
-                                <li><a >Fax: +34938771714</a></li>
+                                <li><a >Tel: +34 938771199 </a></li>
+                                <li><a >Fax: +34 938771714</a></li>
                             </ul>
                         </div><!-- /.widget -->
                     </div><!-- /.link-widget -->

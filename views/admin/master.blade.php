@@ -94,7 +94,7 @@
                 <li>
                     <a href="{{url('admin/brands')}}">
                         <i class="icon-flag"></i>
-                        <span>Marcas patrocinadoras</span>
+                        <span>Marcas del banner</span>
                     </a>
                 </li>
 

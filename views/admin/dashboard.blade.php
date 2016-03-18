@@ -56,7 +56,7 @@
 
                   <div class="infobox-data">
                       <span class="infobox-data-number">{{$brands_count}}</span>
-                      <div class="infobox-content">Marcas patrocinadoras</div>
+                      <div class="infobox-content">Marcas</div>
                   </div>
               </div>
 
@@ -95,9 +95,9 @@
              </div>
              <div class="span3">
                  <a class="btn btn-app btn-primary radius-5" href="{{url('admin/brands')}}"><i class=" icon-flag "></i></a>
-                 <h1> <a href="{{url('admin/brands')}}"> Marcas patrocinadoras </a></h1>
+                 <h1> <a href="{{url('admin/brands')}}"> Marcas  </a></h1>
 
-                 <h4> Aqui podra visualizar o adicionar marcas que patrocinan sus productos</h4>
+                 <h4> Aqui podra visualizar o adicionar marcas al banner de su catalogo</h4>
              </div>
          </div>
 
