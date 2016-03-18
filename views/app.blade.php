@@ -45,7 +45,9 @@
 </head>
 <body>
 
+
 <div class="wrapper">
+
     @yield('content')
 </div><!-- /.wrapper -->
 
@@ -67,6 +69,7 @@
 {!! HTML::script('shop/assets/js/jquery.customSelect.min.js') !!}
 {!! HTML::script('shop/assets/js/wow.min.js') !!}
 {!! HTML::script('shop/assets/js/scripts.js') !!}
+
 
 
 </body>
