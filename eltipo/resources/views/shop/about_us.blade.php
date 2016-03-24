@@ -17,25 +17,16 @@
                 <div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
 
                     <section id="who-we-are" class="section m-t-0">
-                        <h2>Quienes somos</h2>
+                        <h2>SOMOS MATEU EXPORT S.L.</h2>
                         <p>
-                            Mateu Export, situados en el centro de Catalunya,
-                            una de la regiones mas avanzadas de Europa y
-                            uno de los cuatro motores principales de la UE.
+                            Un grupo de empresas  familiares  españolas,  con una larga tradición a través de varias generaciones, con más de 60 años de experiencia en el mercado internacional e insertada en la cadena de suministro industrial, diseñada para mitigar las presiones de la fabricación moderna.
                         </p>
 
                         <p>
-                            Nuestras empresas están hoy en día presentes en 66 mercados internacionales de los 5 continentes,
-                            a través de nuestros representantes y/o distribuidores en cada uno de ellos.
+                            Mateu Export, situados en el centro de Catalunya, una de las regiones más avanzadas de Europa y uno de los cuatro motores principales de la UE.
                         </p>
 
-                        <p>
-                            Una de las principales líneas de nuestra empresa es el suministro de repuestos, módulos,
-                            tarjetas y piezas para sistemas de control o para la automatización industrial prácticamente
-                            para cualquier marca o modelo.
-                        </p>
-
-                    </section><!-- /#who-we-are -->
+                   </section><!-- /#who-we-are -->
 
 
                 </div><!-- /.col -->
@@ -116,7 +107,51 @@
 
                 </div><!-- /.col -->
             </div><!-- /.row -->
+            <hr>
 
+            <div class="containertri">
+                <div class="row section m-t-0" style="background-color: #dddccf;">
+                    <div style="float: left; margin: 0 0 1em 1em;">
+                        <h4 style="margin-top: 5px;">ALCANCE</h4>
+                        <img src="{{url('catalog/images/extra/alcance1.jpg')}}" style="margin-right: 20px;" class="img-thumbnail">
+                    </div>
+                    <div style="margin: 30px;">
+                        <p>
+                            Nuestras empresas están presentes en 70 paises de los 5 continentes, a través de nuestros 73 representantes y/o distribuidores en cada uno de ellos.
+                            Trabajamos lo mas cerca posible de nuestros clientes para conocer sus problemas y necesidades lo antes posible.
+                        </p>
+                        <hr>
+
+                    </div>
+                    <div style="float: left; margin: 0 0 1em 1em;">
+                        <h4 >SATISFACCION</h4>
+                        <img src="{{url('catalog/images/extra/satisfaccion1.jpg')}}" style="margin-right: 20px;" class="img-thumbnail">
+                    </div>
+                    <div style="margin: 50px;">
+                        <p>
+                            Nuestras empresas, modestas, con poca burocracia y sin lujos, no tienen que incidir estos gastos sobre los articulos a vender. Nos interesa tener clientes asiduos y que crezca nuestra familia de clientes. Aqui cada cliente no es numero, es alguien muy querido, al cual nos complace tenerlo siempre satisfecho en calidad, precio y servicio.
+                        </p>
+                        <hr>
+
+                    </div>
+                    <div style="float: left; margin: 0 0 1em 1em;">
+                        <h4>PROVEEDORES</h4>
+                        <img src="{{url('catalog/images/extra/proveedores1.jpg')}}" style="margin-right: 20px;" class="img-thumbnail">
+                    </div>
+                    <div style="margin: 70px;">
+                        <p>
+                            No estamos afiliados a ningún fabricante por una buena razón. Para que podamos ofrecer a nuestros clientes la opción más rápida, más flexible y más económica.
+                        </p>
+                        <hr>
+
+                    </div>
+                    <div style="position: absolute; top: 450px; left: -3%">
+
+                        <img src="{{url('catalog/images/extra/logo3.png')}}" style="width: 390px;" class="img-polaroid">
+                    </div>
+
+                </div>
+            </div>
         </div><!-- /.container -->
 
 
