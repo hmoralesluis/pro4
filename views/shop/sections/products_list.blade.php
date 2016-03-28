@@ -1,6 +1,6 @@
 <section id="gaming"  class=" wow fadeInUp">
     <div class="container">
-        <h2 class="section-title">Productos de {{$category->name}}</h2>
+            <h2 class="section-title">Productos fabricante:  {{$category->name}}</h2>
         <div class="tab-content">
             <div id="grid-view" class="products-grid fade tab-pane in active">
                 <div class="product-grid-holder">
@@ -8,7 +8,9 @@
                         <table class="table table-striped">
                             <thead>
                             <th> No</th>
-                            <th> Marca</th>
+                            @if(!is_null($category))
+                             <th> Marca</th>
+                            @endif
                             <th> Numero de parte</th>
                             <th> Codigo</th>
                             <th> Descripcion</th>
@@ -17,7 +19,9 @@
                             @for($i = 0; $i < count($products); $i++)
                                 <tr>
                                  <td> <a href="{{url('product/details/'. $products[$i]->id)}}" >{{$i + 1}} </a></td>
-                                 <td> {{$products[$i]->mark}} </td>
+                                 @if(!is_null($category))
+                                    <td> {{$products[$i]->mark}} </td>
+                                 @endif
                                  <td> <a href="{{url('product/details/'. $products[$i]->id)}}"> {{$products[$i]->part_number}} </a></td>
                                  <td> {{$products[$i]->code}} </td>
                                  <td> {{$products[$i]->description}} </td>
@@ -26,7 +30,9 @@
 
                             <tfoot>
                             <th> No</th>
-                            <th> Marca</th>
+                            @if(!is_null($category))
+                                <th> Marca</th>
+                            @endif
                             <th> Numero de parte</th>
                             <th> Codigo</th>
                             <th> Descripcion</th>

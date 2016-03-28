@@ -11,8 +11,8 @@
                     <div data-u="slides" style="  cursor: default; position: relative; top: 0px; left: 20px;   width: 1000px; height: 100px;  " >
 
                         @foreach($brands as $brand)
-                            <div  style="display: none;">
-                                <img   data-u="image" src="{{url('catalog/images/brands/' . $brand->image)}}" />
+                            <div  style=" display: none;">
+                                <img   style="padding-left:10px;" data-u="image" src="{{url('catalog/images/brands/' . $brand->image)}}" />
                             </div>
                         @endforeach
 

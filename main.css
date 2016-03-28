@@ -36,6 +36,63 @@ Table of Contents
 /*===================================================================================*/
 /*  Helper
 /*===================================================================================*/
+.who-title-bg{
+  text-align: center;
+  margin-top: -20px;
+  font-size: 35pt;
+  padding-bottom: 50px;
+  color: rgba(36, 199, 155, 0.73);
+}
+
+.who-title-light{
+    text-align: center;
+    margin-top: -20px;
+    font-size: 35pt;
+    padding-bottom: 50px;
+    color: #747474;
+}
+
+.around-world{
+  background: url("../images/who/world-back.png") no-repeat scroll center center #ffffff;
+}
+
+.provedors {
+    background: url("../images/who/blue.png") no-repeat scroll center center #ffffff;
+}
+
+.service-summary p {
+    text-align: justify;
+}
+
+
+#section1{
+    background: url("../images/who/section1.jpg") no-repeat scroll center center #ffffff;
+}
+
+#section3{
+    background: url("../images/who/back_section3.jpg") no-repeat scroll center center #ffffff;
+}
+
+.services-content-bg .section p,
+.services-content-light .section p{
+    font-size: 13pt;
+    text-align: justify;
+}
+
+.services-content-bg .section p{
+    color:#24c79b;
+}
+
+.who-content-bg .col-md-8 p,
+.who-content-light .col-md-8 p{
+  font-size: 16pt;
+  text-align: justify;
+  margin-top: 50px;
+}
+
+.who-content-bg .col-md-8 p{
+  color: #24c79b;
+}
 
 .more_visit_img{
    width: 194px;
@@ -62,7 +119,8 @@ Table of Contents
   max-height: 200px;
 }
 .light-bg {
-  background-color: #f8f8f8;
+/*  background-color: #f8f8f8;*/
+  background: url("../images/gray-bg.jpg") repeat scroll center center #ffffff;
 }
 .inner {
   padding-top: 75px;
@@ -333,7 +391,8 @@ ul {
   font-family: 'Open Sans', sans-serif;
 }
 .color-bg {
-  background-color: #f9f9f9;
+ /* background-color: #f9f9f9;*/
+  background: url("../images/gray-bg.jpg") repeat scroll center center #ffffff;
   border-top: 1px solid #e0e0e0;
 }
 img {
@@ -1106,12 +1165,15 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 .yamm .dropup,
 .yamm .dropdown {
   position: static;
+
 }
 .yamm .container {
   position: relative;
+
 }
 .yamm .dropdown-menu {
   left: auto;
+  /*background: url("../images/gray-bg.jpg") repeat scroll center center #ffffff;*/
 }
 .yamm .nav.navbar-right .dropdown-menu {
   left: auto;
@@ -1119,6 +1181,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 }
 .yamm .yamm-content {
   padding: 20px 30px;
+
 }
 
 .yamm .dropdown.yamm-fw .dropdown-menu {
@@ -1128,6 +1191,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 .megamenu-vertical .yamm-content {
   padding: 10px 20px;
   height: auto;
+
 }
 .megamenu-vertical .yamm-content h2 {
   font-size: 18px;
@@ -1153,6 +1217,8 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 .megamenu-vertical .yamm-content li:hover,
 .megamenu-vertical .yamm-content li:focus {
   background-color: #f9f9f9;
+
+
 }
 .megamenu-vertical .yamm-content .dropdown-banner-holder {
   position: absolute;
@@ -3689,7 +3755,10 @@ header .top-cart-row .top-cart-holder .total-price-basket {
   text-align: center;
   padding: 55px 30px 30px 30px;
   position: relative;
+  height: 225px;
 }
+
+
 .services .service .service-icon {
   height: 70px;
   width: 70px;
@@ -3700,6 +3769,13 @@ header .top-cart-row .top-cart-holder .total-price-basket {
   top: -35px;
   left: 35%;
 }
+
+.services .service .details{
+    position: absolute;
+    top: 210px;
+    left: 35%;
+}
+
 .services .service .service-icon i {
   padding: 15px;
 }
@@ -3720,6 +3796,7 @@ header .top-cart-row .top-cart-holder .total-price-basket {
 }
 .team-members .team-member .profile-pic {
   width: 100%;
+ /* height: 300px;*/
 }
 .team-members .team-member .profile {
   text-align: center;

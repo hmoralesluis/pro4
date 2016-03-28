@@ -86,7 +86,7 @@
         @endif
 
     </section><!-- /#gaming -->
+    @include('shop.sections.new_entries')
     @include('shop.sections.lasted')
-    @include('shop.sections.more_visits')
 @endsection
 

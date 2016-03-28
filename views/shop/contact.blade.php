@@ -21,7 +21,7 @@
 
 
                         <h2 class="bordered">Contacto</h2>
-                        <p>Estamos aquí para responder cualquier pregunta uqe pueda tener.</p>
+                        <p>Estamos aquí para responder cualquier pregunta que pueda tener.</p>
 
 
 

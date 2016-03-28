@@ -70,6 +70,9 @@
 {!! HTML::script('shop/assets/js/scripts.js') !!}
 
 
+@yield('script')
+
+
 
 </body>
 </html>

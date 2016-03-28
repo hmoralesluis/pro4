@@ -1,7 +1,7 @@
 <!-- ============================================================= TOP NAVIGATION ============================ -->
 
 
-<!-- ============================================================= HEADER ================================== -->
+<!-- ===============navbar navbar-default navbar-fixed-top ==================== HEADER ================================== -->
 <header class="no-padding-bottom header-alt">
     <div class="container no-padding">
 
@@ -116,6 +116,8 @@
                             </li>
                         </ul>
                     </li>
+
+
                 </ul><!-- /.navbar-nav -->
             </div><!-- /.navbar-collapse -->
         </div><!-- /.navbar -->

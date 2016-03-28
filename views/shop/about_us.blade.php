@@ -11,116 +11,137 @@
 
 @section('main_content')
     <main id="about-us">
-        <div class="container inner-top-xs inner-bottom-sm">
+        <section class="row who-content-light light-bg  inner-xs">
+            <div class="container">
+                <div class="row">
 
-            <div class="row">
-                <div class="col-xs-12 col-md-8 col-lg-8 col-sm-8">
+                    <h1 class="who-title-light" ><i class="glyphicon glyphicon-star-empty"></i> SOMOS MATEU EXPORT S.L. </h1>
 
-                    <section id="who-we-are" class="section m-t-0">
-                        <h2>Quienes somos</h2>
+                    <div class="col-md-8 section m-t-0">
+
+
+                        <p>
+                            Un grupo de empresas familiares españolas,
+                            con una larga tradición a través de varias generaciones,
+                            con más de 60 años de experiencia en el mercado internacional
+                            e insertada en la cadena de suministro industrial,
+                            diseñada para mitigar las presiones de la fabricación moderna.
+                        </p>
+
                         <p>
                             Mateu Export, situados en el centro de Catalunya,
-                            una de la regiones mas avanzadas de Europa y
-                            uno de los cuatro motores principales de la UE.
+                            una de las regiones más avanzadas de Europa
+                            y uno de los cuatro motores principales de la UE.
                         </p>
-
-                        <p>
-                            Nuestras empresas están hoy en día presentes en 66 mercados internacionales de los 5 continentes,
-                            a través de nuestros representantes y/o distribuidores en cada uno de ellos.
-                        </p>
-
-                        <p>
-                            Una de las principales líneas de nuestra empresa es el suministro de repuestos, módulos,
-                            tarjetas y piezas para sistemas de control o para la automatización industrial prácticamente
-                            para cualquier marca o modelo.
-                        </p>
-
-                    </section><!-- /#who-we-are -->
-
-
-                </div><!-- /.col -->
-                <div class="col-xs-12 col-md-4 col-lg-4 col-sm-4">
-
-                    <section id="our-team">
-                        <h2 class="sr-only">Our team</h2>
+                    </div><!-- /.section -->
+                    <div class="col-md-4">
                         <ul class="team-members list-unstyled">
 
                             <li class="team-member">
-                                <img src="assets/images/team/1.jpg" alt="" class="profile-pic img-responsive">
-                                <div class="profile">
-                                    <h3>John Snow <small class="designation">CEO/Founder</small></h3>
-                                    <ul class="social list-unstyled">
-                                        <li>
-                                            <a href="http://facebook.com/">
-											<span class="fa-stack fa-lg">
-											  <i class="fa fa-circle fa-stack-2x"></i>
-											  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-											</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://twitter.com/">
-											<span class="fa-stack fa-lg">
-											  <i class="fa fa-circle fa-stack-2x"></i>
-											  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-											</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://linkedin.com/">
-											<span class="fa-stack fa-lg">
-											  <i class="fa fa-circle fa-stack-2x"></i>
-											  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-											</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div><!-- /.profile -->
+                                <img src="{{url('shop/assets/images/who/img2.jpg')}}" alt="" class="profile-pic img-responsive">
+
+
                             </li><!-- /.team-member -->
+                        </ul><!-- /.team-members -->
+
+
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+
+        </section><!-- /#what-can-we-do-for-you -->
+
+        <section class="row around-world who-content-bg inner-xs">
+            <div class="container">
+                <div class="row">
+                    <h1 class="who-title-bg" ><i class="glyphicon glyphicon-globe"></i> ALCANCE </h1>
+                    <div class="col-md-4">
+                        <ul class="team-members list-unstyled">
 
                             <li class="team-member">
-                                <img src="assets/images/team/2.jpg" alt="" class="profile-pic img-responsive">
-                                <div class="profile">
-                                    <h3>Smith John <small class="designation">Support Staff</small></h3>
-                                    <ul class="social list-unstyled">
-                                        <li>
-                                            <a href="http://facebook.com/">
-											<span class="fa-stack fa-lg">
-											  <i class="fa fa-circle fa-stack-2x"></i>
-											  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-											</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://twitter.com/">
-											<span class="fa-stack fa-lg">
-											  <i class="fa fa-circle fa-stack-2x"></i>
-											  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-											</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://linkedin.com/">
-											<span class="fa-stack fa-lg">
-											  <i class="fa fa-circle fa-stack-2x"></i>
-											  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-											</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div><!-- /.profile -->
+                                <img src="{{url('shop/assets/images/who/world.jpg')}}" alt="" class="profile-pic img-responsive">
+
+
                             </li><!-- /.team-member -->
-
                         </ul><!-- /.team-members -->
-                    </section><!-- #our-team -->
-
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-
-        </div><!-- /.container -->
 
 
+                    </div>
+                    <div class="col-md-8 section m-t-0">
+                        <p>
+                            Nuestras empresas están presentes en 70 paises de los 5 continentes,
+                            a través de nuestros 73 representantes y/o distribuidores en cada uno de ellos.
+                            Trabajamos lo mas cerca posible de nuestros clientes para conocer sus problemas y necesidades lo antes posible.
+                        </p>
+                    </div><!-- /.section -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /#what-can-we-do-for-you -->
 
+        <section class="row   light-bg  who-content-light inner-xs">
+            <div class="container">
+                <div class="row">
+
+                    <h1 class="who-title-light" ><i class="glyphicon glyphicon-thumbs-up"></i> SATISFACCION </h1>
+                    <div class="col-md-8 section m-t-0">
+
+
+                        <p>
+
+
+                            Nuestras empresas, modestas, con poca burocracia y sin lujos,
+                            no tienen que incidir estos gastos sobre los articulos a vender.
+                            Nos interesa tener clientes asiduos y que crezca nuestra familia de clientes.
+                            Aqui cada cliente no es numero, es alguien muy querido,
+                            al cual nos complace tenerlo siempre satisfecho en calidad,
+                            precio y servicio.
+                        </p>
+                    </div><!-- /.section -->
+
+                    <div class="col-md-4">
+                        <ul class="team-members list-unstyled">
+
+                            <li class="team-member">
+                                <img src="{{url('shop/assets/images/who/satisf.jpg')}}" alt="" class="profile-pic img-responsive">
+
+
+                            </li><!-- /.team-member -->
+                        </ul><!-- /.team-members -->
+
+
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /#what-can-we-do-for-you -->
+
+        <section class="row who-content-bg provedors inner-xs">
+            <div class="container">
+                <div class="row">
+                    <h1 class="who-title-bg"><i class="fa fa-truck"></i> PROVEEDORES </h1>
+
+                    <div class="col-md-4">
+                        <ul class="team-members list-unstyled">
+
+                            <li class="team-member">
+                                <img src="{{url('shop/assets/images/who/provedors.png')}}" alt="" class="profile-pic img-responsive">
+
+                            </li><!-- /.team-member -->
+                        </ul><!-- /.team-members -->
+
+
+                    </div>
+                    <div class="col-md-8 section m-t-0">
+
+
+                        <p>
+                            No estamos afiliados a ningún fabricante por una buena razón.
+                            Para que podamos ofrecer a nuestros clientes la opción más rápida,
+                            más flexible y más económica.
+                        </p>
+                    </div><!-- /.section -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /#what-can-we-do-for-you -->
 
     </main><!-- /#about-us -->
 @endsection
