@@ -1,0 +1,123 @@
+{% extends 'FrontBundle::layout.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/front/css/login.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/admin/plugins/iCheck/square/blue.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block options %}
+    <nav>
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li>
+                <a href="{{ path('join') }}">Join Us</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Welcome to our Company
+                    <small>Insert your credentils for a full access</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('homepage') }}">Home</a></li>
+                    <li class="active">Login</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-sm-12">
+                    <h4>Manage your Bussines</h4>
+
+                    <p>Cookie jelly beans soufflé icing. Gummi bears tootsie roll powder chupa chups cheesecake
+                        chocolate jelly-o lollipop lollipop. Halvah applicake chupa chups. Marshmallow chocolate jujubes
+                        icing lollipop gummi bears chupa chups pudding bonbon. Jelly beans jelly soufflé jujubes.
+                        <a href="#"> read moore.</a></p>
+                    <hr>
+                </div>
+                <div class="col-sm-4">
+                    <h4 class="text-center">Mandatory fields</h4>
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    <form id="login_form" class="form-signin" method="POST" action="{{ path('check_path') }}">
+                        <h2 class="form-signin-heading"></h2>
+
+                        <div class="form-group has-feedback">
+                            <input type="text" id="inputUsername" name="_username" value="{{ last_username }}"
+                                   class="form-control"
+                                   placeholder="Username" required>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" id="inputPassword" name="_password" class="form-control"
+                                   placeholder="Password"
+                                   required>
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-block btn-primary btn-lg" type="submit">Sign in</button>
+                    </form>
+                </div>
+                <div class="col-sm-8">
+
+                    <h4>Welcome to 'Modern Business'</h4>
+
+                    <p>This is a great place to introduce your company or project and describe what you do. This about
+                        page
+                        features general company information, employee bios, and other helpful elements.</p>
+
+                    <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis
+                        fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis iste natus
+                        error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+                        illo
+                        inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                        voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+                        eos
+                        qui ratione voluptatem sequi nesciunt.</p>
+                    <hr>
+                    <div class="well">
+                        <h4>Popular Categories</h4>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>Bootstrap's default well's work great for side widgets! What is a widget anyways...?.
+                                    Lid est laborum dolo rumes fugats untras.</p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>Bootstrap's default well's work great for side widgets! What is a widget
+                                    anyways...?. Lid est laborum dolo rumes fugats untras.<a href="#"> read moore.</a></p> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/admin/plugins/iCheck/icheck.min.js') }}"></script>
+    <script>
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%'
+            });
+        });
+    </script>
+{% endblock %}
+

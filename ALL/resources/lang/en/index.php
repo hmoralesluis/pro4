@@ -60,7 +60,7 @@ return [
 
     'product.details.title' => 'Product details',
 
-    'product.manufactures' => 'Products manufacture',
+    'product.manufactures' => 'Products manufacturer',
 
     'table.mark' => 'Mark',
     'table.part_number' => 'Part number',

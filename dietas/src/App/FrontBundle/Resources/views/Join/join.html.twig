@@ -1,0 +1,134 @@
+{% extends 'FrontBundle::layout.html.twig' %}
+
+{% block title %}Join Us{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/admin/plugins/select2/select2.min.css') }}">
+{% endblock %}
+
+{% block options %}
+    <nav>
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li>
+                <a href="{{ path('login') }}">Login</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Pricing Table
+                    <small>Our Pricing Options</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('homepage') }}">Home</a></li>
+                    <li class="active">Join us</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-sm-12">
+                    <h4>Modules Feature</h4>
+
+                    <p>Cookie jelly beans soufflé icing. Gummi bears tootsie roll powder chupa chups cheesecake
+                        chocolate jelly-o lollipop lollipop. Halvah applicake chupa chups. Marshmallow chocolate jujubes
+                        icing lollipop gummi bears chupa chups pudding bonbon. Jelly beans jelly soufflé jujubes.
+                        <a href="#"> read moore.</a></p>
+                    <hr>
+                </div>
+                <div class="col-sm-4">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input required class="form-control" id="name" name="name"
+                                   placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input required class="form-control" id="lastname" name="lastname"
+                                   placeholder="Last name">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" required class="form-control" id="password" name="password"
+                                   placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" required class="form-control" id="email" name="email"
+                                   placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <select class="form-control select2" style="width: 100%;"></select>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">
+                            <strong>Free Membership</strong>
+                        </div>
+                        <div class="panel-body">
+                            <h3 class="panel-title price">$0<span class="price-cents">Free</span></h3>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">5 Diets</li>
+                            <li class="list-group-item">5 Training Plans</li>
+                            <li class="list-group-item">Some Tips</li>
+                            <li class="list-group-item">Personal Page</li>
+                            <li class="list-group-item">Share in Social Networks</li>
+                            <li class="list-group-item"><button class="btn btn-primary">Sign Up Now!</button></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <h4>Membership Feature</h4>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum
+                        dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in
+                        faucibus. <a href="#"> read moore.</a></p>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">
+                            <strong>Payment Membership <span class="label label-success">Best offert</span></strong>
+                        </div>
+                        <div class="panel-body">
+                            <h3 class="panel-title price">$9<span class="price-cents">99</span><span
+                                        class="price-month">mo.</span>
+                            </h3>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">10 Diets</li>
+                            <li class="list-group-item">10 Training Plans</li>
+                            <li class="list-group-item">Some Tips</li>
+                            <li class="list-group-item">Personal Page</li>
+                            <li class="list-group-item">Calculator for body width</li>
+                            <li class="list-group-item"><button class="btn btn-primary">Sign Up Now!</button></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <h4>Membership Feature</h4>
+
+                    <p>Tilefish electric knifefish salmon shark southern Dolly Varden. Pacific argentine tope golden
+                        shiner ilisha barreleye loosejaw catla, dogteeth tetra catfish tenpounder nase scup Ragfish
+                        brotula. <a href="#"> read moore.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/admin/plugins/select2/select2.full.min.js') }}"></script>
+    <script>
+        $(function () {
+            $(".select2").select2();
+        });
+    </script>
+{% endblock %}

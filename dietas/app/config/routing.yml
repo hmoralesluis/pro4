@@ -1,0 +1,12 @@
+front:
+    resource: "@FrontBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+logout:
+    pattern:   /logout
