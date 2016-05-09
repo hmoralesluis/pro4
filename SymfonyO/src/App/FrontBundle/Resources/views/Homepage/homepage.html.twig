@@ -1,0 +1,83 @@
+{% extends 'FrontBundle::layout.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/front/css/login.css') }}"/>
+{% endblock %}
+
+{% block options %}
+    <nav>
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li class="active">
+                <a href="#" class="signin"><span>Login </span><i class="icon-angle-up"></i></a>
+                <fieldset id="signin_menu">
+                    <form method="post" id="signin" action="{{ path('check_path') }}">
+                        <input id="username" name="_username" value="{{ last_username | default('') }}" title="username"
+                               placeholder="Username" tabindex="4" type="text">
+                        </p>
+                        <p>
+                            <input id="password" name="_password" value="" title="password" tabindex="5"
+                                   placeholder="Password" type="password">
+                        </p>
+
+                        <p class="remember">
+                            <a class="btn btn-flat btn-mini btn-primary" href="javascript:$('#signin').submit()">Sign
+                                in</a>
+                            <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+                            <label for="remember">Remember me</label>
+                        </p>
+
+                        <p class="forgot"><a href="#" id="resend_password_link">Forgot your password?</a></p>
+
+                        <p class="forgot-username"><a rel="tooltip"
+                                                      title="If you remember your password, try logging in with your email"
+                                                      href="#">Forgot your username?</a></p>
+                    </form>
+                </fieldset>
+            </li>
+            <li>
+                <a href="{{ path('join') }}">Join Us</a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div role="main" class="main">
+        <div id="content" class="content full">
+            {% for block in blocks | default([]) if block.active %}
+                {% include 'FrontBundle:Blocks:' ~ block.name ~ '.html.twig' ignore missing %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".signin").click(function (e) {
+                e.preventDefault();
+                $("fieldset#signin_menu").toggle();
+                $(".signin").toggleClass("menu-open");
+                if ($('.signin').hasClass('menu-open')) {
+                    $('.signin i.icon-angle-up').removeClass('icon-angle-up').addClass('icon-angle-down');
+                } else {
+                    $('.signin i.icon-angle-down').removeClass('icon-angle-down').addClass('icon-angle-up');
+                }
+            });
+
+            $("fieldset#signin_menu").mouseup(function () {
+                return false
+            });
+            $(document).mouseup(function (e) {
+                if ($(e.target).parent("a.signin").length == 0) {
+                    $(".signin").removeClass("menu-open");
+                    $("fieldset#signin_menu").hide();
+                    $('.signin i.icon-angle-down').removeClass('icon-angle-down').addClass('icon-angle-up');
+                }
+            });
+
+        });
+    </script>
+{% endblock %}

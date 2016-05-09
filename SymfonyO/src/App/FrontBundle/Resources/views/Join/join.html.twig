@@ -1,0 +1,163 @@
+{% extends 'FrontBundle::layout.html.twig' %}
+
+{% block title %}Join Us{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/front/css/login.css') }}"/>
+    <style>
+        #signin_menu {
+            right: 114px;
+        }
+    </style>
+{% endblock %}
+
+{% block options %}
+    <nav>
+        <ul class="nav nav-pills nav-main" id="mainMenu">
+            <li class="active">
+                <a href="#" class="signin"><span>Login </span><i class="icon-angle-up"></i></a>
+                <fieldset id="signin_menu">
+                    <form method="post" id="signin" action="{{ path('check_path') }}">
+                        <input id="username" name="_username" value="{{ last_username | default('') }}" title="username"
+                               placeholder="Username" tabindex="4" type="text">
+                        </p>
+                        <p>
+                            <input id="password" name="_password" value="" title="password" tabindex="5"
+                                   placeholder="Password" type="password">
+                        </p>
+
+                        <p class="remember">
+                            <a class="btn btn-flat btn-mini btn-primary" href="javascript:$('#signin').submit()">Sign
+                                in</a>
+                            <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+                            <label for="remember">Remember me</label>
+                        </p>
+
+                        <p class="forgot"><a href="#" id="resend_password_link">Forgot your password?</a></p>
+
+                        <p class="forgot-username"><a rel="tooltip"
+                                                      title="If you remember your password, try logging in with your email"
+                                                      href="#">Forgot your username?</a></p>
+                    </form>
+                </fieldset>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div role="main" class="main">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h1 class="page-header">Welcome to our Company
+                        <small>Complete the registration to join a membership</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ path('homepage') }}">Home</a><span class="divider">/</span></li>
+                        <li class="active">Join Us</li>
+                    </ol>
+                    <h4>Manage your Bussines</h4>
+
+                    <p>Cookie jelly beans soufflé icing. Gummi bears tootsie roll powder chupa chups cheesecake
+                        chocolate jelly-o lollipop lollipop. Halvah applicake chupa chups. Marshmallow chocolate
+                        jujubes
+                        icing lollipop gummi bears chupa chups pudding bonbon. Jelly beans jelly soufflé jujubes.
+                        <a href="#"> read moore.</a></p>
+                    <hr class="tall"/>
+
+                    <h3 class="short"><strong>Four</strong> Plans</h3>
+
+                    <p>Using the "Most Popular" css class.</p>
+                </div>
+                <div class="pricing-table">
+                    <div class="span3">
+                        <div class="plan">
+                            <h3>FREE<span>$0</span></h3>
+                            <a class="btn btn-large btn-primary" href="#">Sign up</a>
+                            <ul>
+                                <li><b>5</b> Diets</li>
+                                <li><b>5</b> Training Plans</li>
+                                <li>Some Tips</li>
+                                <li>Personal Page</li>
+                                <li>Share in Social Networks</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span3 center">
+                        <div class="plan most-popular">
+                            <div class="plan-ribbon-wrapper">
+                                <div class="plan-ribbon">Popular</div>
+                            </div>
+                            <h3>Standard<span>$9.99</span></h3>
+                            <a class="btn btn-large btn-primary" href="#">Sign up</a>
+                            <ul>
+                                <li><b>10</b> Diets</li>
+                                <li><b>10</b> Training Plans</li>
+                                <li>Some Tips</li>
+                                <li>Personal Page</li>
+                                <li>Body mass calculator</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="plan">
+                            <h3>Professional<span>$49.99</span></h3>
+                            <a class="btn btn-large btn-primary disabled" href="#">Sign up</a>
+                            <ul>
+                                <li><b>3GB</b> Disk Space</li>
+                                <li><b>25GB</b> Monthly Bandwidth</li>
+                                <li><b>5</b> Email Accounts</li>
+                                <li><b>5</b> Email Accounts</li>
+                                <li><b>Unlimited</b> subdomains</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="plan">
+                            <h3>Personal Shop<span>$49.99</span></h3>
+                            <a class="btn btn-large btn-primary disabled" href="#">Sign up</a>
+                            <ul>
+                                <li><b>1GB</b> Disk Space</li>
+                                <li><b>10GB</b> Monthly Bandwidth</li>
+                                <li><b>2</b> Email Accounts</li>
+                                <li><b>5</b> Email Accounts</li>
+                                <li><b>Unlimited</b> subdomains</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(".signin").click(function (e) {
+                e.preventDefault();
+                $("fieldset#signin_menu").toggle();
+                $(".signin").toggleClass("menu-open");
+                if ($('.signin').hasClass('menu-open')) {
+                    $('.signin i.icon-angle-up').removeClass('icon-angle-up').addClass('icon-angle-down');
+                } else {
+                    $('.signin i.icon-angle-down').removeClass('icon-angle-down').addClass('icon-angle-up');
+                }
+            });
+
+            $("fieldset#signin_menu").mouseup(function () {
+                return false
+            });
+            $(document).mouseup(function (e) {
+                if ($(e.target).parent("a.signin").length == 0) {
+                    $(".signin").removeClass("menu-open");
+                    $("fieldset#signin_menu").hide();
+                    $('.signin i.icon-angle-down').removeClass('icon-angle-down').addClass('icon-angle-up');
+                }
+            });
+
+        });
+    </script>
+{% endblock %}
