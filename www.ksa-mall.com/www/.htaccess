@@ -1,0 +1,699 @@
+#####################################################
+# Script: htaccess Security                         #
+# Version: 1.0                                      # 
+#  ### Changelog ###                                #
+# v1.0 - 2012-02-14                                 #
+#####################################################
+# No web server version and indexes
+
+DirectoryIndex index.php index.html index.cgi
+
+ServerSignature Off
+Options all -Indexes
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Rewrite Rules written by Hina 
+RewriteRule ^business-directory/(.*)/(.*).html?$ business-member.php?catname=$1&member=$2
+RewriteRule ^business-directory/(.*).html?$ business-subdirectory.php?cat=$1
+RewriteRule ^directory/index.html?$ business-directory.php
+RewriteRule ^e-cards/index.html?$ e-cards.php
+RewriteRule ^e-cards/(.*).html?$ e-card.php?cid=$1
+RewriteRule ^e-cards-view/card-(.*).html?$ e-card-view.php?cid=$1
+
+RewriteBase / 
+
+RewriteRule ^contact-us.html$ contact-us.php [L]
+
+RewriteRule ^offers/$ featured-offer-listings.php [L]
+RewriteRule ^offers/index.html$ offer-listings.php [L]
+
+RewriteRule ^offers/([A-Za-z0-9\-\_]+).html$ view-offer.php?seoUrl=$1 [L]
+
+RewriteRule ^featured/$ featured-business-listings.php [L]
+RewriteRule ^featured/index.html$ featured-business-listings.php [L]
+
+RewriteRule ^$ index.php [L]
+RewriteRule ^index.php$ index.php [L]
+RewriteRule ^index.html$ index.php [L]
+
+### RewriteRule ^$ listings.php?catSeoUrl=shopping [L] ###
+### RewriteRule ^index.php$ listings.php?catSeoUrl=shopping [L] ###
+### RewriteRule ^index.html$ listings.php?catSeoUrl=shopping [L] ###
+
+######## Old New Pages Maping Start ########
+RewriteCond %{QUERY_STRING} ^subid=29$
+RewriteRule ^b2b/template-sub\.php$ weddings/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^cid=6$
+RewriteRule ^b2b/template-cat\.php$ shopping/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=28$
+RewriteRule ^b2b/template-sub\.php$ weddings/make-up-artists-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^cid=4$
+RewriteRule ^b2b/template-cat\.php$ weddings/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=93$
+RewriteRule ^b2b/template-sub\.php$ shopping/boutiques-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=9$
+RewriteRule ^b2b/template-sub\.php$ fashion/hair-stylists-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=25$
+RewriteRule ^b2b/template-sub\.php$ shopping/flowers-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=36$
+RewriteRule ^b2b/template-sub\.php$ weddings/wedding-planners-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=27$
+RewriteRule ^b2b/template-sub\.php$ weddings/hair-salons-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^cid=3$
+RewriteRule ^b2b/template-cat\.php$ fashion/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=94$
+RewriteRule ^b2b/template-sub\.php$ fashion/boutiques-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=26$
+RewriteRule ^b2b/template-sub\.php$ weddings/zaffe-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=95$
+RewriteRule ^b2b/template-sub\.php$ shopping/furniture-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=7$
+RewriteRule ^b2b/template-sub\.php$ fashion/fashion-designers-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=61$
+RewriteRule ^b2b/template-sub\.php$ activities/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=10$
+RewriteRule ^b2b/template-sub\.php$ fashion/fashion-make-up-artists-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=191$
+RewriteRule ^b2b/template-sub\.php$ shopping/wholesale-clothing/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=170$
+RewriteRule ^b2b/template-sub\.php$ going-out/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=34$
+RewriteRule ^b2b/template-sub\.php$ shopping/chocolates-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=97$
+RewriteRule ^b2b/template-sub\.php$ shopping/lebanon-accessories-artisana/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=24$
+RewriteRule ^b2b/template-sub\.php$ shopping/bakeries-patisseries-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=35$
+RewriteRule ^b2b/template-sub\.php$ weddings/wedding-sound-and-light-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=8$
+
+RewriteRule ^b2b/template-sub\.php$ fashion/beauty-centers-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^cid=74$
+
+RewriteRule ^b2b/template-cat\.php$ business/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=30$
+RewriteRule ^b2b/template-sub\.php$ shopping/boutiques-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=126$
+RewriteRule ^b2b/template-sub\.php$ shopping/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=18$
+RewriteRule ^b2b/template-sub\.php$ fashion/medical-beauty-clinics-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=39$
+RewriteRule ^b2b/template-sub\.php$ weddings/florists-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=21$
+RewriteRule ^b2b/template-sub\.php$ activities/lebanon-sports-in-nature/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=37$
+RewriteRule ^b2b/template-sub\.php$ weddings/wedding-venues-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=139$
+RewriteRule ^b2b/template-sub\.php$ shopping/bakeries-patisseries-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=115$
+RewriteRule ^b2b/template-sub\.php$ shopping/flooring-material/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=17$
+RewriteRule ^b2b/template-sub\.php$ weddings/photographers-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^cid=20$
+RewriteRule ^b2b/template-cat\.php$ activities/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=164$
+RewriteRule ^b2b/template-sub\.php$ weddings/jimmyjib-steadicam-rentals-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=13$
+RewriteRule ^b2b/template-sub\.php$ weddings/jewelry-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=33$
+RewriteRule ^b2b/template-sub\.php$ weddings/wedding-cards-and-wedding-albums-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=22$
+RewriteRule ^b2b/template-sub\.php$ weddings/photographers-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=136$
+RewriteRule ^b2b/template-sub\.php$ weddings/wedding-sound-and-light-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=204$
+RewriteRule ^b2b/template-sub\.php$ hotels/hotels-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=180$
+RewriteRule ^b2b/template-sub\.php$ weddings/zaffe-in-lebanon/index.html [R=301,L]
+RewriteCond %{QUERY_STRING} ^subid=119$
+RewriteRule ^b2b/template-sub\.php$ shopping/chocolates-in-lebanon/index.html [R=301,L]
+######## Old New Pages Maping End ########
+
+<ifModule mod_headers.c>
+	Header set Connection keep-alive
+</ifModule>
+
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript
+</IfModule>
+
+<IfModule mod_expires.c>
+	ExpiresActive on
+	ExpiresDefault "access plus 7 days"
+	ExpiresByType application/javascript "access plus 1 year"
+	ExpiresByType image/x-ico "access plus 1 year"
+	ExpiresByType image/jpg "access plus 7 days"
+	ExpiresByType image/jpeg "access plus 7 days"
+	ExpiresByType image/gif "access plus 7 days"
+	ExpiresByType image/png "access plus 7 days"
+	ExpiresByType text/css "access plus 7 days"
+</IfModule>
+
+######## Admin Module Start ########
+RewriteRule ^admin/(.*)$ admin/$1 [L]
+######## User Module End ########
+
+######## /new/images Start ########
+RewriteRule ^new/images/(.*)$ images/$1 [L]
+######## /new/images End ########
+
+######## Pages Module Start ########
+RewriteRule ^info/([A-Za-z0-9\-\_]+).html$ view-page.php?seoUrl=$1 [L,QSA]
+######## Pages Module End ########
+
+######## User Module Start ########
+RewriteRule ^user/(.*)$ user/$1 [L]
+######## User Module End ########
+
+######## Thumb Rules Start ########
+RewriteRule ^captcha/$ php-includes/captcha.php [B,L,NE]
+RewriteRule ^new/thumb/([0-9]+)-([0-9]+)-(.*)$ thumb.php?width=$1&height=$2&imagePath=$3 [B,L,NE]
+RewriteRule ^new/thumb/(.*)$ lthumb.php?imagePath=$1 [B,L,NE]
+RewriteRule ^thumb/([0-9]+)-([0-9]+)-(.*)$ thumb.php?width=$1&height=$2&imagePath=$3 [B,L,NE]
+RewriteRule ^thumb/(.*)$ lthumb.php?imagePath=$1 [B,L,NE]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^captcha/$ php-includes/captcha.php [B,L,NE]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^thumb/([0-9]+)-([0-9]+)-(.*)$ thumb.php?width=$1&height=$2&imagePath=$3 [B,L,NE]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^thumb/(.*)$ lthumb.php?imagePath=$1 [B,L,NE]
+######## Thumb Rules End ########
+
+######## Subdomain Asserts Start ########
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^images/(.*)$ images/$1 [L]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^assets/(.*)$ assets/$1 [L]
+######## Subdomain Asserts End ########
+
+######## Other Page htaccess Start ########
+RewriteRule ^e-store/page/([A-Za-z0-9\-\_]+).html$ e-store-pages.php?seoUrl=$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^page/([A-Za-z0-9\-\_]+).html$ e-store-pages.php?seoUrl=$1 [L,QSA]
+######## Other Page htaccess End ########
+
+######## Subdomain for E-Store ########
+RewriteRule ^e-store/index.html$ e-store.php [L,QSA]
+RewriteRule ^e-store/search/index.html$ e-store.php [L,QSA]
+RewriteRule ^e-store/search/$ e-store.php [L,QSA]
+RewriteRule ^e-store/([A-Za-z0-9\-\_]+)/index.html$ e-store.php?subCatSeoUrl=$1 [L,QSA]
+RewriteRule ^e-store/cash-on-delivery/([A-Za-z0-9\-\_]+).html$ e-store-item-cash-on-delivery.php?seoUrl=$1 [L,QSA]
+RewriteRule ^e-store/send-me-invoice/([A-Za-z0-9\-\_]+).html$ e-store-item-send-me-invoice.php?seoUrl=$1 [L,QSA]
+RewriteRule ^e-store/([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+).html$ view-e-store-item.php?subCatSeoUrl=$1&seoUrl=$2 [L,QSA]
+RewriteRule ^e-store/([A-Za-z0-9\-\_]+).html$ view-e-store-item.php?seoUrl=$1 [L,QSA]
+RewriteRule ^e-store/([A-Za-z0-9\-\_]+)/$ e-store.php?subCatSeoUrl=$1 [L,QSA]
+RewriteRule ^e-store/$ e-store.php [L]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^index.html$ e-store.php [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^search/index.html$ e-store.php [L,QSA]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^search/$ e-store.php [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/index.html$ e-store.php?subCatSeoUrl=$1 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^cash-on-delivery/([A-Za-z0-9\-\_]+).html$ e-store-item-cash-on-delivery.php?seoUrl=$1 [L,QSA]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^send-me-invoice/([A-Za-z0-9\-\_]+).html$ e-store-item-send-me-invoice.php?seoUrl=$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+).html$ view-e-store-item.php?subCatSeoUrl=$1&seoUrl=$2 [L,QSA]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+).html$ view-e-store-item.php?seoUrl=$1 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/$ e-store.php?subCatSeoUrl=$1 [L,QSA] 
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^e-store\.(.*)\.(.*)
+RewriteRule ^$ e-store.php [L]
+######## Subdomain for E-Store End ########
+
+######## Subdomain for qatar Blog Start ########
+RewriteRule ^qatar/index.html$ lebanon-blog.php [L,QSA]
+RewriteRule ^qatar/([A-Za-z0-9\-\_]+).html$ view-lebanon-blog.php?seoUrl=$1 [L,QSA]
+RewriteRule ^qatar/tag/([A-Za-z0-9\-\_]+)$ lebanon-blog.php?tag=$1 [L,QSA]
+RewriteRule ^qatar/$ lebanon-blog.php [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^qatar\.(.*)\.(.*)
+RewriteRule ^index.html$ lebanon-blog.php [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^qatar\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+).html$ view-lebanon-blog.php?seoUrl=$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^qatar\.(.*)\.(.*)
+RewriteRule ^tag/([A-Za-z0-9\-\_]+)$ lebanon-blog.php?tag=$1 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^qatar\.(.*)\.(.*)
+RewriteRule ^$ lebanon-blog.php [L,QSA]
+######## Subdomain for qatar Blog End ########
+
+######## Subdomain for Blog Start ########
+RewriteRule ^blog/index.html$ blog.php [L,QSA]
+RewriteRule ^blog/([A-Za-z0-9\-\_]+).html$ view-blog.php?seoUrl=$1 [L,QSA]
+RewriteRule ^blog/tag/(.*)$ blog.php?tag=$1 [L,QSA]
+RewriteRule ^blog/$ blog.php [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^blog\.(.*)\.(.*)
+RewriteRule ^index.html$ blog.php [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^blog\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+).html$ view-blog.php?seoUrl=$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^blog\.(.*)\.(.*)
+RewriteRule ^tag/(.*)$ blog.php?tag=$1 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^blog\.(.*)\.(.*)
+RewriteRule ^$ blog.php [L,QSA]
+######## Subdomain for Blog End ########
+
+######## Subdomain for Night Life Start ########
+RewriteRule ^nightlife/index.html$ galleries.php?seoUrl=lebanon-nightlife-photos&isSpecial=y [L,QSA]
+RewriteRule ^nightlife/([A-Za-z0-9\-\_]+).html$ view-gallery.php?catSeoUrl=lebanon-nightlife-photos&seoUrl=$1&isSpecial=y [L,QSA]
+RewriteRule ^nightlife/([A-Za-z0-9\-\_]+).html$ view-gallery.php?catSeoUrl=lebanon-nightlife-photos&seoUrl=$1&isSpecial=y [L,QSA]
+RewriteRule ^nightlife/$ galleries.php?seoUrl=lebanon-nightlife-photos&isSpecial=y [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^nightlife\.(.*)\.(.*)
+RewriteRule ^index.html$ galleries.php?seoUrl=lebanon-nightlife-photos&isSpecial=y [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^nightlife\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+).html$ view-gallery.php?catSeoUrl=lebanon-nightlife-photos&seoUrl=$1&isSpecial=y [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^nightlife\.(.*)\.(.*)
+RewriteRule ^$ galleries.php?seoUrl=lebanon-nightlife-photos&isSpecial=y [L,QSA]
+######## Subdomain for Night Life End ########
+
+######## Subdomain for Gallery Start ########
+RewriteRule ^photos/([A-Za-z0-9\-\_]+)/index.html$ galleries.php?seoUrl=$1 [L,QSA]
+RewriteRule ^photos/index.html$ gallery-categories.php [L]
+RewriteRule ^photos/([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+).html$ view-gallery.php?catSeoUrl=$1&seoUrl=$2 [L,QSA]
+RewriteRule ^photos/([A-Za-z0-9\-\_]+)/$ galleries.php?seoUrl=$1 [L,QSA]
+RewriteRule ^photos/$ gallery-categories.php [L]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^photos\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/index.html$ galleries.php?seoUrl=$1 [L,QSA]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^photos\.(.*)\.(.*)
+RewriteRule ^index.html$ gallery-categories.php [L]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^photos\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+).html$ view-gallery.php?catSeoUrl=$1&seoUrl=$2 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^photos\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/$ galleries.php?seoUrl=$1 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^photos\.(.*)\.(.*)
+RewriteRule ^$ gallery-categories.php [L]
+######## Subdomain for Gallery End ########
+
+
+######## Subdomain for Realty Start ########
+RewriteRule ^real-estate/index.html$ real-estate.php [L]
+RewriteRule ^real-estate/search/index.html$ real-estate-search-result.php [L,QSA]
+RewriteRule ^real-estate/search/$ real-estate-search-result.php [L,QSA]
+RewriteRule ^real-estate/([0-9]+)-(.*).html$ view-real-estate-property.php?pid=$1 [L,QSA]
+RewriteRule ^real-estate/$ real-estate.php [L]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^real-estate\.(.*)\.(.*)
+RewriteRule ^index.html$ real-estate.php [L]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^real-estate\.(.*)\.(.*)
+RewriteRule ^search/index.html$ real-estate-search-result.php [L,QSA]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^real-estate\.(.*)\.(.*)
+RewriteRule ^search/$ real-estate-search-result.php [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^real-estate\.(.*)\.(.*)
+RewriteRule ^([0-9]+)-(.*).html$ view-real-estate-property.php?pid=$1 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^real-estate\.(.*)\.(.*)
+RewriteRule ^$ real-estate.php [L]
+######## Subdomain for Realty End ########
+
+######## Subdomain for Categories End ########
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+)/search/index.html$ search-result.php?catSeoUrl=$1&subCatSeoUrl=$2 [L,QSA]
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+)/search/$ search-result.php?catSeoUrl=$1&subCatSeoUrl=$2 [L,QSA]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/search/index.html$ search-result.php?catSeoUrl=$1 [L,QSA]
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/search/$ search-result.php?catSeoUrl=$1 [L,QSA]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^search/index.html$ search-result.php?catSeoUrl=$1 [L,QSA]
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^search/$ search-result.php?catSeoUrl=$1 [L,QSA]
+
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/index.html$ listings.php?catSeoUrl=$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/(.+)/search/index.html$ search-result.php?catSeoUrl=$1&subCatSeoUrl=$2 [L,QSA]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/search/index.html$ search-result.php?catSeoUrl=$1 [L,QSA]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+)/index.html$ listings.php?catSeoUrl=$1&subCatSeoUrl=$2 [L]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+).html$ view-listing.php?catSeoUrl=$1&subCatSeoUrl=$2&seoUrl=$3 [L,QSA]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+).html$ view-listing.php?catSeoUrl=$1&seoUrl=$2 [L,QSA]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+)/$ listings.php?catSeoUrl=$1&subCatSeoUrl=$2 [L]
+
+RewriteCond %{REQUEST_URI} !^/new
+RewriteCond %{REQUEST_URI} !^/b2b
+RewriteCond %{REQUEST_URI} !^/banners
+RewriteCond %{REQUEST_URI} !^/menus
+RewriteCond %{REQUEST_URI} !^/cms
+RewriteCond %{REQUEST_URI} !^/directories
+RewriteCond %{REQUEST_URI} !^/fckeditor
+RewriteRule ^([A-Za-z0-9\-\_]+)/$ listings.php?catSeoUrl=$1 [L]
+
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^index.html$ listings.php?catSeoUrl=%1 [L]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^(.+)/search/index.html$ search-result.php?catSeoUrl=%1&subCatSeoUrl=$1 [L,QSA]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^search/index.html$ search-result.php?catSeoUrl=%1 [L,QSA]
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/index.html$ listings.php?catSeoUrl=%1&subCatSeoUrl=$1 [L]
+
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^(.+)/search/$ search-result.php?catSeoUrl=%1&subCatSeoUrl=$1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^search/$ search-result.php?catSeoUrl=%1 [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/([A-Za-z0-9\-\_]+).html$ view-listing.php?catSeoUrl=%1&subCatSeoUrl=$1&seoUrl=$2 [L,QSA]
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+).html$ view-listing.php?catSeoUrl=%1&seoUrl=$1 [L,QSA]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^([A-Za-z0-9\-\_]+)/$ listings.php?catSeoUrl=%1&subCatSeoUrl=$1 [L]
+
+
+RewriteCond %{HTTP_HOST} !^www\.(.*)\.(.*) [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.(.*)\.(.*)
+RewriteRule ^$ listings.php?catSeoUrl=%1 [L]
+######## Subdomain for Categories End ########
+
+# Block suspicious request methods
+RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK|DEBUG) [NC]
+RewriteRule ^(.*)$ - [F,L]
+
+# Block WP timthumb hack
+RewriteCond %{REQUEST_URI} (timthumb\.php|phpthumb\.php|thumb\.php|thumbs\.php) [NC]
+RewriteRule . - [S=1]
+
+# Block suspicious user agents and requests
+RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|"|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
+RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
+RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
+RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
+RewriteCond %{THE_REQUEST} (%0A|%0D) [NC,OR]
+
+# Block MySQL injections, RFI, base64, etc.
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC,OR]
+RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC,OR]
+RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
+RewriteCond %{QUERY_STRING} http\: [NC,OR]
+RewriteCond %{QUERY_STRING} https\: [NC,OR]
+RewriteCond %{QUERY_STRING} \=\|w\| [NC,OR]
+RewriteCond %{QUERY_STRING} ^(.*)/self/(.*)$ [NC,OR]
+RewriteCond %{QUERY_STRING} ^(.*)cPath=http://(.*)$ [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^i]*i)+frame.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+RewriteCond %{QUERY_STRING} base64_(en|de)code[^(]*\([^)]*\) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} ^.*(\[|\]|\(|\)|<|>).* [NC,OR]
+RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
+RewriteCond %{QUERY_STRING} (\./|\../|\.../)+(motd|etc|bin) [NC,OR]
+RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+RewriteCond %{QUERY_STRING} concat[^\(]*\( [NC,OR]
+RewriteCond %{QUERY_STRING} union([^s]*s)+elect [NC,OR]
+RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
+RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
+RewriteRule ^(.*)$ - [F,L]
+
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:hala@ddilb.com [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Custo [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^DISCo [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^eCatch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GetRight [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GetWeb! [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Grafula [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^HMView [OR] 
+RewriteCond %{HTTP_USER_AGENT} HTTrack [NC,OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} Indy\ Library [NC,OR] 
+RewriteCond %{HTTP_USER_AGENT} ^InterGET [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JetCar [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^larbin [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Navroad [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NearSite [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Octopus [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pavuk [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^RealDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^ReGet [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebGo\ IS [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebLeacher [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Website\ Quester [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Wget [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Widow [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Zeus 
+RewriteRule ^.* - [F,L]
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+ErrorDocument 404 /lebanon-guide.php

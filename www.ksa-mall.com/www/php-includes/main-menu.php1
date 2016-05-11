@@ -1,0 +1,30 @@
+<ul>
+	<li><a href="javascript:void(0)" title="Home">Home</a></li>
+    <li><a href="http://dubai.<?=$domain?>/index.html" title="Lebanon">Dubai</a></li>
+    <?
+    	$hmCatRes = mysql_query('
+			SELECT c.catID, c.catName, c.catSeoUrl 
+			FROM category AS c
+			WHERE c.parentID = 0 ORDER BY c.sOrder ASC
+		');
+	?>
+    <? if(mysql_num_rows($hmCatRes) > 0): ?>
+    <? while($hmCatRow = mysql_fetch_object($hmCatRes)): ?>
+    	<?
+			$hmCatID	= $hmCatRow->catID;
+			$hmCatName	= stripslashes($hmCatRow->catName);
+			$hmCatSeoUrl= stripslashes($hmCatRow->catSeoUrl);
+		?>
+        <li><a href="<?='http://'.$hmCatSeoUrl.'.'.$domain?>/index.html" title="<?=$hmCatName?>"><?=$hmCatName?></a></li>
+    <? endwhile; ?>
+    <? endif; ?>
+    
+    
+    <li><a href="http://real-estate.<?=$domain?>/index.html" title="Real Estate">Real Estate</a></li>
+    <li><a href="http://blog.<?=$domain?>/index.html" title="Blog">Blog</a></li>
+    <li><a href="http://directory.<?=$domain?>/index.html" title="Directory">Directory</a></li>
+    <li><a href="http://e-store.<?=$domain?>/index.html" title="E Stores">E Stores</a></li>
+    <li><a href="http://e-cards.<?=$domain?>/index.html" title="E Cards">E Cards</a></li>
+    <li><a href="http://photos.<?=$domain?>/index.html" title="Photo Albums">Photos</a></li>
+    <li><a href="http://nightlife.<?=$domain?>/index.html" title="Night Life">Night Life</a></li>
+</ul>
