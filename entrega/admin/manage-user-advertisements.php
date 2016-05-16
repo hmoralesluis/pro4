@@ -1,4 +1,4 @@
-<?php 	require_once('../includes/db_con.php');
+<? 	require_once('../includes/db_con.php');
 	require_once('../includes/general_functions.php');
 	require_once('../includes/db_functions.php');
 	
@@ -43,7 +43,7 @@
 		}
 	}
 ?>
-<?php require_once('includes/header.php'); ?>
+<? require_once('includes/header.php'); ?>
 	<div class="popupWrapper" id="addAdvertisementWindow">
         <div class="popupWindow" style="min-width:70%">
             <div class="titleBar"><span>Add Advertisement</span></div>
@@ -61,10 +61,10 @@
                     <label for="aatID">Select Advertisement Type *</label>
                     <select class="form-control showAdvertDescriptions" name="aatID" id="aatID" data-a="loadAdvertDetails" data-url="<?=$formPostUrl?>" required="required">
                         <option value="">Select a Type</option>
-                        <?php foreach($advertTypeArr as $key => $val): ?>
-                        <?php if($atID == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
+                        <? foreach($advertTypeArr as $key => $val): ?>
+                        <? if($atID == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
                         <option value="<?=$key?>"<?=$selected?>><?=$val?></option>
-                        <?php endforeach; ?>
+                        <? endforeach; ?>
                     </select>
                     
                     <div id="aatDescription" class="emptyHtml"><?=$desFieldArr['atDescription']?></div>
@@ -102,10 +102,10 @@
                     <label for="aatIDe">Advertisement Type *</label>
                     <select class="form-control showAdvertDescriptions" name="aatIDe" id="aatIDe"  required="required">
                         <option value="">Select a Type</option>
-                        <?php foreach($advertTypeArr as $key => $val): ?>
-                            <?php if($atID == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
+                        <? foreach($advertTypeArr as $key => $val): ?>
+                            <? if($atID == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
                             <option value="<?=$key?>"<?=$selected?>><?=$val?></option>
-                        <?php endforeach; ?>
+                        <? endforeach; ?>
                     </select>
                     
                     <div id="euaFields"></div>
@@ -138,10 +138,10 @@
                             	<div class="col-lg-2">
                                     <select class="form-control" name="sFilter" id="sFilter">
                                     	<option value="">Select a Filter</option>
-                                        <?php foreach($filterArr as $key => $val): ?>
-                                        	<?php if($sFilter == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
+                                        <? foreach($filterArr as $key => $val): ?>
+                                        	<? if($sFilter == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
                                         	<option value="<?=$key?>"<?=$selected?>><?=$val?></option>
-                                        <?php endforeach; ?>
+                                        <? endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="col-lg-2">
@@ -153,19 +153,19 @@
                                 <div class="col-lg-2">
                                 	<select class="form-control" name="sStatus" id="sStatus">
                                     	<option value="">All Status</option>
-                                        <?php foreach($advertStatusArr as $key => $val): ?>
-                                        	<?php if($sStatus == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
+                                        <? foreach($advertStatusArr as $key => $val): ?>
+                                        	<? if($sStatus == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
                                         	<option value="<?=$key?>"<?=$selected?>><?=strip_tags($val)?></option>
-                                        <?php endforeach; ?>
+                                        <? endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="col-lg-2">
                                     <select class="form-control" name="sStatusType" id="sStatusType">
                                         <option value="">All Types</option>
-                                        <?php foreach($advertType as $key => $val): ?>
-                                            <?php if($sStatusType == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
+                                        <? foreach($advertType as $key => $val): ?>
+                                            <? if($sStatusType == $key){$selected = ' selected="selected"';}else{$selected = '';} ?>
                                             <option value="<?=$key?>"<?=$selected?>><?=strip_tags($val)?></option>
-                                        <?php endforeach; ?>
+                                        <? endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="col-lg-2">
@@ -205,7 +205,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php 								$sql .= '
+                            <? 								$sql .= '
 									SELECT ua.*, u.fullName, u.email
 									FROM user_advertisements AS ua
 									LEFT JOIN users AS u ON u.userID = ua.userID
@@ -263,9 +263,9 @@
 
 								$sNo = 1;
 							?>
-                            <?php if(mysql_num_rows($res) > 0): ?>
-                            <?php while($row = mysql_fetch_object($res)): ?>
-                            <?php 								$uaID	= $row->uaID;
+                            <? if(mysql_num_rows($res) > 0): ?>
+                            <? while($row = mysql_fetch_object($res)): ?>
+                            <? 								$uaID	= $row->uaID;
 								$atType	= stripslashes($row->atType);
 								
 								if($row->userID == 0){
@@ -298,12 +298,12 @@
                                 <td><?=$sNo?></td>
                                 <td id="td_uD_<?=$uaID?>" width="250"><?=$userDetails?></td>
                                 
-								<?php if($atType == 'RSI' || $atType == 'FI' || $atType == 'PII' || $atType == 'HS'): ?>
+								<? if($atType == 'RSI' || $atType == 'FI' || $atType == 'PII' || $atType == 'HS'): ?>
                                 <td id="td_aI_<?=$uaID?>" width="75"><img src="<?=$imgPath?>" alt="" /></td>
                                 <td id="td_aD_<?=$uaID?>" width="225"><?=$advertDetails?></td>
-                                <?php else: ?>
+                                <? else: ?>
                                 <td id="td_aD_<?=$uaID?>" width="300" colspan="2"><?=$advertDetails?></td>
-                                <?php endif; ?>
+                                <? endif; ?>
                                 
                                 <td width="150">
                                     <div class="pull-left" style="width:70%">
@@ -314,10 +314,10 @@
                                 <td width="150">
                                     <div class="pull-left" style="width:70%">
                                         <select class="form-control updateSelect" id="uStatusSelect_<?=$uaID?>" data-url="<?=$formPostUrl?>" data-a="updateStatus" data-wid="<?=$uaID?>" data-resultprefix="sTatus_">
-                                            <?php foreach($advertStatusArr as $key => $val): ?>
-												<?php if($row->status == $key){$selected=' selected="selected"';}else{$selected='';} ?>
+                                            <? foreach($advertStatusArr as $key => $val): ?>
+												<? if($row->status == $key){$selected=' selected="selected"';}else{$selected='';} ?>
                                             	<option value="<?=$key?>"<?=$selected?>><?=strip_tags($val)?></option>
-                                            <?php endforeach; ?>
+                                            <? endforeach; ?>
                                         </select>
                                     </div>
                                     <div class="pull-right" style="width:25%;" id="sTatus_<?=$uaID?>"></div>
@@ -325,10 +325,10 @@
                                 <td width="150">
                                     <div class="pull-left" style="width:70%">
                                         <select class="form-control updateSelect" id="uStatusSelect_<?=$uaID?>" data-url="<?=$formPostUrl?>" data-a="updateStatus" data-wid="<?=$uaID?>" data-resultprefix="sTatus_">
-                                            <?php foreach($advertType as $key => $val): ?>
-                                                <?php if($row->status == $key){$selected=' selected="selected"';}else{$selected='';} ?>
+                                            <? foreach($advertType as $key => $val): ?>
+                                                <? if($row->status == $key){$selected=' selected="selected"';}else{$selected='';} ?>
                                                 <option value="<?=$key?>"<?=$selected?>><?=strip_tags($val)?></option>
-                                            <?php endforeach; ?>
+                                            <? endforeach; ?>
                                         </select>
                                     </div>
                                     <div class="pull-right" style="width:25%;" id="sTatus_<?=$uaID?>"></div>
@@ -342,13 +342,13 @@
                                     </button>
                                 </td>
                             </tr>
-                            <?php $sNo++; ?>
-                            <?php endwhile; ?>
-                            <?php else: ?>
+                            <? $sNo++; ?>
+                            <? endwhile; ?>
+                            <? else: ?>
                             <tr class="errorRow">
                                 <td colspan="7" align="center"><span class="text-red">No Records Found</span></td>
                             </tr>
-                            <?php endif; ?>
+                            <? endif; ?>
                             </tbody>
                             <tfoot>
                             <tr>
@@ -366,13 +366,13 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                     <div class="pagination">
-					<?php createPaginationLink($totalRows, $limit, 'Y')?>
+					<? createPaginationLink($totalRows, $limit, 'Y')?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <?php 	$footerscript = '
+    <? 	$footerscript = '
     <script type="text/javascript">
 		$(document).on("change", ".showAdvertDescriptions", function(event){
 			var thisE	= $(this);
@@ -422,4 +422,4 @@
 	</script>
 	';
 	?>
-<?php require_once('includes/footer.php'); ?>
+<? require_once('includes/footer.php'); ?>

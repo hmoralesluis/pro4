@@ -1,4 +1,5 @@
-<?php ob_start();
+<?
+ ob_start();
 error_reporting(1);
 
 $parseDomain= parse_url($_SERVER['HTTP_HOST']);

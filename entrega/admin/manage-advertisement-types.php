@@ -1,4 +1,4 @@
-<?php 	require_once('../includes/db_con.php');
+<? 	require_once('../includes/db_con.php');
 	require_once('../includes/general_functions.php');
 	require_once('../includes/db_functions.php');
 	
@@ -32,8 +32,8 @@
 		'Y' => 'Yearly'
 	);
 ?>
-<?php require_once('includes/header.php'); ?>
-	<?php 		$_SESSION['imgManagerFilePath'] = '../../../images/userfiles/';
+<? require_once('includes/header.php'); ?>
+	<? 		$_SESSION['imgManagerFilePath'] = '../../../images/userfiles/';
 		$_SESSION['imgManagerFileSelectPath'] = '/images/userfiles/';
 		$_SESSION['imgManageruploadMaxSize'] = '500K';
 	?>
@@ -57,9 +57,9 @@
                         	<label for="aatType">Type *</label>
                             <select class="form-control shoImgProperties" name="aatType" id="aatType" data-a="loadImgPropertiesForAdd" data-url="<?=$formPostUrl?>" required="required">
                                 <option value="">Select a Type</option>
-                                <?php foreach($advTypeArr as $key => $val): ?>
+                                <? foreach($advTypeArr as $key => $val): ?>
                                 <option value="<?=$key?>"><?=$val?></option>
-                                <?php endforeach; ?>
+                                <? endforeach; ?>
                             </select>
                         </div>
                         
@@ -80,7 +80,7 @@
                     <textarea class="form-control htmlEditor" name="apayButtonDaily" id="apayButtonDaily"></textarea>
                     <br />
                     
-                    <?php /*?>
+                    <?/*?>
                     <label for="apayButtonWeekly">One Week Payment URL</label>
                     <input type="text" class="form-control" name="apayButtonWeekly" id="apayButtonWeekly" value="" />
                     
@@ -92,7 +92,7 @@
                     
                     <label for="apayButtonYearly">One Year Payment URL</label>
                     <input type="text" class="form-control" name="apayButtonYearly" id="apayButtonYearly" value="" />
-                    <?php */?>
+                    <? */?>
                     
                     <input type="submit" name="submitBtn" class="btn btn-info" value="Add Advertisement Type" />
                 </form>
@@ -121,9 +121,9 @@
                         	<label for="eatType">Type *</label>
                             <select class="form-control shoImgProperties" name="eatType" id="eatType" data-a="loadImgPropertiesForEdit" data-url="<?=$formPostUrl?>" required="required">
                                 <option value="">Select a Type</option>
-                                <?php foreach($advTypeArr as $key => $val): ?>
+                                <? foreach($advTypeArr as $key => $val): ?>
                                 <option value="<?=$key?>"><?=$val?></option>
-                                <?php endforeach; ?>
+                                <? endforeach; ?>
                             </select>
                         </div>
                         
@@ -144,7 +144,7 @@
                     <textarea class="form-control htmlEditor" name="epayButtonDaily" id="epayButtonDaily"></textarea>
                     <br />
                     
-                    <?php /*?>
+                    <? /*?>
                     <label for="epayButtonWeekly">One Week Payment URL</label>
                     <input type="text" class="form-control" name="epayButtonWeekly" id="epayButtonWeekly" value="" />
                     
@@ -156,7 +156,7 @@
                     
                     <label for="epayButtonYearly">One Year Payment URL</label>
                     <input type="text" class="form-control" name="epayButtonYearly" id="epayButtonYearly" value="" />
-                    <?php */?>
+                    <? */?>
                     
                     <input type="submit" name="submitBtn" class="btn btn-info" value="Save Advertisement Type" />
                 </form>
@@ -187,22 +187,22 @@
                                 <th width="200">Advertisement Type Name</th>
                                 <th width="200">Type</th>
                                 <th width="150">Required Image Size</th>
-                                <?php /*?><th>Payment URLs</th><?php */?>
+                                <? /*?><th>Payment URLs</th><?p */?>
                                 <th width="120">Sort Order</th>
                                 <th style="width: 100px">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php 								$res = mysql_query('
+                            <? 								$res = mysql_query('
 									SELECT * FROM advertisement_types 
 									WHERE isDeleted = "N"
 									ORDER BY sOrder ASC 
 								');
 								$sNo = 1;
 							?>
-                            <?php if(mysql_num_rows($res) > 0): ?>
-                            <?php while($row = mysql_fetch_object($res)): ?>
-                            <?php 								$atID	= $row->atID;
+                            <? if(mysql_num_rows($res) > 0): ?>
+                            <? while($row = mysql_fetch_object($res)): ?>
+                            <? 								$atID	= $row->atID;
 								$atName = stripslashes($row->atName);
 								$atType	= $advTypeArr[$row->atType];
 								
@@ -243,7 +243,7 @@
                                 <th width="200" id="td_atN_<?=$atID?>"><?=$atName?></th>
                                 <th width="200" id="td_at_<?=$atID?>"><?=$atType?></th>
                                 <th width="150" id="td_iS_<?=$atID?>"><?=$imgSize?></th>
-                                <?php /*?><th id="td_atB_<?=$atID?>"><?=$payBtnDetails?></th><?php */?>
+                                <? /*?><th id="td_atB_<?=$atID?>"><?=$payBtnDetails?></th><? */?>
                                 <td width="120">
                                 	<div class="pull-left" style="width:60%">
                                     <input type="text"class="form-control sortThis" value="<?=$row->sOrder?>" data-url="<?=$formPostUrl?>" data-a="sortThis" data-wid="<?=$atID?>" data-resultprefix="sSort_" />
@@ -259,13 +259,13 @@
                                 </button>
                                 </td>
                             </tr>
-                            <?php $sNo++; ?>
-                            <?php endwhile; ?>
-                            <?php else: ?>
+                            <? $sNo++; ?>
+                            <? endwhile; ?>
+                            <? else: ?>
                             <tr class="errorRow">
                                 <td colspan="6" align="center"><span class="text-red">No Records Found</span></td>
                             </tr>
-                            <?php endif; ?>
+                            <? endif; ?>
                             </tbody>
                         </table>
                     </div>
@@ -276,7 +276,7 @@
             </div>
         </div>
     </div>
-    <?php 	$footerscript = '
+    <? 	$footerscript = '
     <script type="text/javascript">
 		$(document).on("change", ".shoImgProperties", function(event){
 			var thisE	= $(this);
@@ -310,4 +310,4 @@
 	</script>
 	';
 	?>
-<?php require_once('includes/footer.php'); ?>
+<? require_once('includes/footer.php'); ?>

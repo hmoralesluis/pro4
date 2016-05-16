@@ -1,4 +1,4 @@
-<?php 	require_once('../includes/db_con.php');
+<? 	require_once('../includes/db_con.php');
 	require_once('../includes/general_functions.php');
 	require_once('../includes/db_functions.php');
 	
