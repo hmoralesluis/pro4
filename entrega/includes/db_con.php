@@ -14,13 +14,13 @@ session_start();
 date_default_timezone_set('Asia/Beirut'); 
 
 $server = "localhost";			//Enter Server Name
-$user 	= "root";	//Enter MySql DB Username
-$pass 	= "root";		//Enter MySql DB User Password
+$user 	= "ksa01_adm";	//Enter MySql DB Username
+$pass 	= ")cTQ9DuS_DPR";		//Enter MySql DB User Password
 $db 	= "ksa01_db";		//Enter Mysql DB Name
 
 $domain = $domainOnly;
 $siteBaseUrl = '/';
-$adminBaseUrl = '/hala/admin/';
+$adminBaseUrl = '/admin/';
 $systemEmailAddress = "noreply@aswakdubai.com";
 /*$_SESSION['imgManagerFilePath'] = 'images/userfiles/';
 $_SESSION['imgManagerFileSelectPath'] = 'images/userfiles/';
