@@ -1,0 +1,118 @@
+ 
+ <?php $__env->startSection('header'); ?>
+   <?php echo $__env->make('shop.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ <?php $__env->stopSection(); ?>
+
+ <?php $__env->startSection('left'); ?>
+     <?php echo $__env->make('shop.leftmenu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+ <?php $__env->stopSection(); ?>
+
+ <?php $__env->startSection('content'); ?>
+     <div class="product-details" xmlns="http://www.w3.org/1999/html"><!--product-details-->
+        <div class="col-sm-5">
+            <div class="view-product">
+                <img  class="img-responsive" src="<?php echo e(url('catalog/images/' . $product->image)); ?>" alt="" />
+            </div>
+            <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+
+                <div class="carousel-inner">
+                    <?php for($j = 0 ; $j < 2; $j++): ?>
+                        <?php if($j == 0): ?>
+                            <div class="item active">
+                        <?php else: ?>
+                            <div class="item">
+                        <?php endif; ?>
+                                <?php for($i = $j*3; $i < count($similar_products) && $i < $j*3+3 ; $i++): ?>
+
+                                        <a><img  class="similar_products img-responsive" src="<?php echo e(url('catalog/images/' . $similar_products[$i]->image)); ?>" alt="" /></a>
+
+                                <?php endfor; ?>
+                            </div>
+
+                    <?php endfor; ?>
+                </div>
+
+                <!-- Controls -->
+                <a class="left item-control" href="#similar-product" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right item-control" href="#similar-product" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+
+        </div>
+        <div class="col-sm-7">
+            <div class="product-information"><!--/product-information-->
+                <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+
+                <img src="<?php echo e(url('shop/images/product-details/rating.png')); ?>" alt="" />
+
+                <p> <span>
+                    <span> <?php echo e($product->mark); ?> </span>
+                </span></p>
+
+                <p> <b>Categoria:</b> <?php echo e($product->category_id); ?></p>
+                <p> <b>Numero de parte:</b> <?php echo e($product->part_number); ?></p>
+                <p> <b>Codigo:</b> <?php echo e($product->code); ?></p>
+                <p><b>Descripcion:</b></p> <p> <?php echo e($product->description); ?></p>
+                <a href=""><img src="<?php echo e(url('shop/images/product-details/share.png')); ?>" class="share img-responsive"  alt="" /></a>
+            </div><!--/product-information-->
+        </div>
+    </div><!--/product-details-->
+
+    <div class="category-tab shop-details-tab"><!--category-tab-->
+        <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#reviews" data-toggle="tab">Opiniones (<?php echo e(count($opinions)); ?>)</a></li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="reviews" >
+                <div class="col-sm-12">
+                    <?php foreach($opinions as $opinion): ?>
+                        <ul>
+                            <li><a><i class="fa fa-user"></i><?php echo e($opinion->guest_name); ?> </a> </li>
+                        </ul>
+                        <p>  <?php echo e($opinion->opinion); ?> </p>
+                        <ul>
+                            <li><a><i class="fa fa-clock-o"></i>12:41 PM</a></li>
+                            <li><a><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
+                        </ul>
+
+                        </br>
+                    <?php endforeach; ?>
+
+
+
+                    <p><b>Escribe tu opinion</b></p>
+                    <form method="post" action="<?php echo e(url('/product/opinion/add/'. $product->id)); ?>">
+                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+										<span>
+											<input name="guest_name" type="text" placeholder="Nombre"/>
+											<input name="guest_email" type="email" placeholder="Correo Electronico"/>
+										</span>
+                        <textarea name="opinion" ></textarea>
+                        <!--<b>Rating: </b> <img src="images/product-details/rating.png" alt="" />-->
+
+                        <button class="btn btn-info pull-right" type="submit">
+                            <i class="icon-ok bigger-110"></i>
+                            Enviar
+                        </button>
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div><!--/category-tab-->
+
+
+    <?php echo $__env->make('shop.recommends', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+ <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

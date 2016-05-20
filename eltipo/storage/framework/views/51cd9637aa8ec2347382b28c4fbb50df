@@ -1,0 +1,18 @@
+
+
+<?php $__env->startSection('top_header'); ?>
+    <?php echo $__env->make('shop.sections.top', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('title'); ?>
+    Categoria  | <?php echo e($category->name); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('main_content'); ?>
+    <?php echo $__env->make('shop.sections.products_list', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('shop.sections.new_entries', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('shop.sections.lasted', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('shop.sections.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,62 @@
+<?php $__env->startSection('page_title'); ?>
+    <h3 class="header smaller lighter blue">Marca patrosinadora</h3>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+
+        <div class="table-header">
+           Todas las marcas patrocinadoras
+              <a class="btn btn-success" href="<?php echo e(url('admin/brand/create')); ?>"> Nueva   </a>
+        </div>
+
+
+            <?php foreach($brands as $brand): ?>
+                <div class="brands-item span3 center">
+                        <div class="hidden-phone visible-desktop btn-group">
+                            <div>
+                                <img class="img-responsive" src="<?php echo e(url('catalog/images/brands/'. $brand->image)); ?>" alt=" " />
+                            </div>
+
+                            <a class="btn btn-mini btn-danger" href="<?php echo e(url('admin/brand/delete/'.$brand->id)); ?>">
+                                <i class="icon-trash bigger-120"></i>
+                            </a>
+                        </div>
+                </div>
+            <?php endforeach; ?>
+        <div class="span12 center pagination">
+           <?php echo $brands->render(); ?>
+
+        </div>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+    <?php echo HTML::script('admin/assets/js/jquery.dataTables.min.js'); ?>
+
+    <?php echo HTML::script('admin/assets/js/jquery.dataTables.bootstrap.js'); ?>
+
+
+
+
+    <script type="text/javascript">
+        $(function() {
+            var oTable1 = $('#table_report').dataTable( {
+                "aoColumns": [
+                    { "bSortable": false },
+                     null,null,
+                    { "bSortable": false }
+                ] } );
+            $('table th input:checkbox').on('click' , function(){
+                var that = this;
+                $(this).closest('table').find('tr > td:first-child input:checkbox')
+                        .each(function(){
+                            this.checked = that.checked;
+                            $(this).closest('tr').toggleClass('selected');
+                        });
+
+            });
+
+            $('[data-rel=tooltip]').tooltip();
+        })
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

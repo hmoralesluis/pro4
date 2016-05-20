@@ -1,0 +1,131 @@
+
+<?php $__env->startSection('title'); ?>
+    Detalles del producto | <?php echo e($product->part_number); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('top_header'); ?>
+    <?php echo $__env->make('shop.sections.top', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('main_content'); ?>
+    <div id="single-product" class="row">
+        </br>
+        <div class="container">
+            <div class="no-margin col-xs-12 col-sm-6 col-md-5 gallery-holder">
+                <img  class="img-responsive" src="<?php echo e(url('catalog/images/' . $product->image)); ?>" alt="" />
+            </div><!-- /.gallery-holder -->
+
+            <div class="no-margin col-xs-12 col-sm-7 body-holder">
+                <div class="body">
+                    <div class="title"><a><?php echo e($product->part_number); ?></a></div>
+                    <div class="brand"><?php echo e($product->mark); ?></div>
+
+                    <div class="excerpt">
+                        <p><?php echo e($product->description); ?></p>
+                    </div>
+                </div><!-- /.body -->
+
+            </div><!-- /.body-holder -->
+        </div>
+    </div><!-- /.row #single-product -->
+
+    <!-- ========================================= SINGLE PRODUCT TAB ========================================= -->
+    <section id="single-product-tab">
+
+        <div class="container">
+            <div class="tab-holder">
+
+                <ul class="nav nav-tabs simple" >
+                    <li class="active"><a href="#reviews" data-toggle="tab">Impresiones (<?php echo e(count($opinions)); ?>)</a></li>
+                </ul><!-- /.nav-tabs -->
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="reviews">
+                        <div class="comments">
+                            <div class="comment-item">
+                                <div class="row no-margin">
+                                    <?php foreach($opinions as $opinion): ?>
+                                        <div class="col-lg-2 col-xs-12 col-sm-3 no-margin">
+                                            <div class="avatar">
+                                                <a href="#" class="bold"><?php echo e($opinion->guest_name); ?></a>
+                                            </div><!-- /.avatar -->
+                                        </div><!-- /.col -->
+                                        <div class="col-xs-12 col-lg-10 col-sm-9 ">
+                                            <div class="comment-body">
+                                                <div class="meta-info">
+
+                                                    <div class="date inline">
+                                                        <?php echo e($opinion->created_at); ?>
+
+                                                    </div>
+                                                </div><!-- /.meta-info -->
+                                                <p class="comment-text">
+                                                    <?php echo e($opinion->opinion); ?>
+
+                                                </p><!-- /.comment-text -->
+                                            </div><!-- /.comment-body -->
+
+                                        </div><!-- /.col -->
+                                    <?php endforeach; ?>
+
+                                </div><!-- /.row -->
+                            </div><!-- /.comment-item -->
+                        </div><!-- /.comments -->
+
+                        <div class="add-review row">
+                            <div class="col-sm-8 col-xs-12">
+                                <div class="new-review-form">
+                                    <h2>Agregar comentario</h2>
+
+
+                                    <?php if(count($errors) > 0): ?>
+                                        <div class="alert alert-danger">
+                                            <strong>Whoops!</strong> Hay problemas para dejar su opinion<br><br>
+                                            <ul>
+                                                <?php foreach($errors->all() as $error): ?>
+                                                    <li><?php echo e($error); ?></li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <form id="contact-form" class="contact-form" method="post"  action="<?php echo e(url('product/opinion/add/'. $product->id)); ?>">
+                                        <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+                                        <div class="row field-row">
+                                            <div class="col-xs-12 col-sm-6">
+                                                <label>Nombre*</label>
+                                                <input name="name" required="true" class="le-input" >
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6">
+                                                <label>Correo*</label>
+                                                <input name="email" type="email" required="true" class="le-input" >
+                                            </div>
+                                        </div><!-- /.field-row -->
+
+                                        <div class="field-row">
+                                            <label>Tu opinion</label>
+                                            <textarea required="true" name="opinion" rows="8" class="le-input"></textarea>
+                                        </div><!-- /.field-row -->
+
+                                        <div class="buttons-holder">
+                                            <button type="submit" class="le-button huge">Enviar</button>
+                                        </div><!-- /.buttons-holder -->
+                                    </form><!-- /.contact-form -->
+                                </div><!-- /.new-review-form -->
+                            </div><!-- /.col -->
+                        </div><!-- /.add-review -->
+
+                    </div><!-- /.tab-pane #reviews -->
+
+
+                </div><!-- /.tab-content -->
+
+            </div><!-- /.tab-holder -->
+        </div><!-- /.container -->
+    </section><!-- /#single-product-tab -->
+    <!-- ========================================= SINGLE PRODUCT TAB : END ========================================= -->
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('shop.sections.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
