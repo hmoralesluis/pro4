@@ -459,7 +459,9 @@
                 </section>
             <?php endif; ?>
             
-            <?php 				$bsize1Arr = array();
+            <?php 
+			/*Code edited by Hamlet*/
+			$bsize1Arr = array();
 				$bsize1Res = mysql_query('
 					SELECT ua.* 
 					FROM user_advertisements AS ua 
@@ -468,6 +470,7 @@
 					AND ua.expiryOn >= "'.date('Y-m-d').'" 
 					ORDER BY rand() LIMIT 2 
 				');
+				/*end Code edited by Hamlet*/
 				if($bsize1Res && mysql_num_rows($bsize1Res) > 0){
 					while($bsize1Row = mysql_fetch_object($bsize1Res)){
 						$bsize1Arr[] = array(
@@ -551,7 +554,9 @@
                 </section>
             <?php endif; ?>
             
-            <?php 				$bsize4Res = mysql_query('
+            <?php 
+			/*Code edited by Hamlet*/
+			$bsize4Res = mysql_query('
 					SELECT ua.* 
 					FROM user_advertisements AS ua 
 					WHERE ua.atID IN (5) 
@@ -560,6 +565,7 @@
 					ORDER BY rand() 
 					LIMIT 2
 				');
+				/*end Code edited by Hamlet*/
 			?>
             <?php if($bsize4Res && mysql_num_rows($bsize4Res) > 0): ?>
             	<section class="block equal-height" style="padding:40px 0px;">
