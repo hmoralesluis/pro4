@@ -1,0 +1,67 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>User list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Salt</th>
+                <th>Contactphone</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Skype</th>
+                <th>Whatsapp</th>
+                <th>Facebook</th>
+                <th>Twitter</th>
+                <th>Google</th>
+                <th>Signupdate</th>
+                <th>Generation</th>
+                <th>Positioningeneration</th>
+                <th>Photoextension</th>
+                <th>Active</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('management_user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.lastName }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.password }}</td>
+                <td>{{ entity.salt }}</td>
+                <td>{{ entity.contactPhone }}</td>
+                <td>{{ entity.city }}</td>
+                <td>{{ entity.address }}</td>
+                <td>{{ entity.skype }}</td>
+                <td>{{ entity.whatsapp }}</td>
+                <td>{{ entity.facebook }}</td>
+                <td>{{ entity.twitter }}</td>
+                <td>{{ entity.google }}</td>
+                <td>{% if entity.signUpDate %}{{ entity.signUpDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.generation }}</td>
+                <td>{{ entity.positionInGeneration }}</td>
+                <td>{{ entity.photoExtension }}</td>
+                <td>{{ entity.active }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('management_user_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}
