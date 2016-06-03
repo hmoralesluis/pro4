@@ -1,0 +1,29 @@
+;Configuraciones;;icon-cogs
+1;Planes de Beneficio;;
+1;Tipo de Productos;;
+1;Tipo de Notificaciones;;
+1;Países;management_country;
+;Gestión de Contenido;management_contentblock;icon-edit
+;Zona Personal;management_user_show;icon-user
+;Inicio;management;icon-home
+;Dietas;management_product_diets;icon-food
+;Planes de Entrenamiento;management_product_training;icon-heart
+;Consejos;;icon-comments-alt
+;Productos;;icon-tags
+;Negocios;;icon-briefcase
+13;Oportunidad de Negocios;;
+13;Red de Negocios;management_user_network;
+13;Expandir su Negocio;;
+13;Compartir en Redes Sociales;;
+;Banco Personal;;icon-credit-card
+23;Ganancias;;
+6;Bloque Carousel;;
+6;Bloque Concept;;
+6;Bloque Features;;
+6;Bloque Intro;;
+6;Bloque Maps;;
+6;Bloque Marketing;;
+6;Bloque Products;;
+18;Transacciones;;
+18;Retirar Fondos;;
+;Contacta;;
