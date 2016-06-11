@@ -1,0 +1,42 @@
+{% extends 'FrontBundle::layout.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+    <div role="main" class="main">
+        <div id="content" class="content full">
+            {% for block in blocks | default([]) if block.active %}
+                {% include 'FrontBundle:Blocks:' ~ block.name ~ '.html.twig' ignore missing %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".signin").click(function (e) {
+                e.preventDefault();
+                $("fieldset#signin_menu").toggle();
+                $(".signin").toggleClass("menu-open");
+                if ($('.signin').hasClass('menu-open')) {
+                    $('.signin i.icon-angle-up').removeClass('icon-angle-up').addClass('icon-angle-down');
+                } else {
+                    $('.signin i.icon-angle-down').removeClass('icon-angle-down').addClass('icon-angle-up');
+                }
+            });
+
+            $("fieldset#signin_menu").mouseup(function () {
+                return false
+            });
+            $(document).mouseup(function (e) {
+                if ($(e.target).parent("a.signin").length == 0) {
+                    $(".signin").removeClass("menu-open");
+                    $("fieldset#signin_menu").hide();
+                    $('.signin i.icon-angle-down').removeClass('icon-angle-down').addClass('icon-angle-up');
+                }
+            });
+
+        });
+    </script>
+{% endblock %}
