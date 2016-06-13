@@ -93,11 +93,11 @@
                     <input type="hidden" name="fa" value="Edit" />
                     <input type="hidden" name="uaID" id="uaID" />
                     
-<!--                    <label for="euaName">Name Your Advertisement *</label>-->
-<!--                    <input type="text" class="form-control" name="euaName" id="euaName" value="" required="required" />-->
+                    <label for="euaName">Name Your Advertisement *</label>
+                   <input type="text" class="form-control" name="euaName" id="euaName" value="" required="required" />
 
-                    <label for="eatName">Advertisement Type *</label>
-                    <input type=text" class="form-control" name="eatName" id="eatName" value="" disabled="disabled" />
+<!--                    <label for="eatName">Advertisement Type *</label>-->
+<!--                    <input type=text" class="form-control" name="eatName" id="eatName" value="" disabled="disabled" />-->
 
                     <label for="aatIDe">Advertisement Type *</label>
                     <select class="form-control showAdvertDescriptions" name="aatIDe" id="aatIDe"  required="required">
