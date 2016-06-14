@@ -1,0 +1,13 @@
+﻿
+    <!-- ================================== TOP NAVIGATION ================================== -->
+    <div class="side-menu animate-dropdown">
+        <div class="head"><i class="fa fa-list"></i> Fabricantes </div>
+        <nav class="yamm megamenu-horizontal" role="navigation">
+            <ul class="nav">
+                <?php foreach($categories as $cat): ?>
+                        <li><a href="<?php echo e(url('/category/'.$cat->id)); ?>"><?php echo e($cat->name); ?></a></li>
+                <?php endforeach; ?>
+            </ul><!-- /.nav -->
+        </nav><!-- /.megamenu-horizontal -->
+    </div><!-- /.side-menu -->
+    <!-- ================================== TOP NAVIGATION : END ================================== -->

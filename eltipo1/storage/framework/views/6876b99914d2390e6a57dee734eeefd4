@@ -1,0 +1,16 @@
+<?php $__env->startSection('title'); ?>
+    Catalogo | Inicio
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('top_header'); ?>
+    <?php echo $__env->make('shop.sections.top', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('main_content'); ?>
+    <?php echo $__env->make('shop.sections.slider', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('shop.sections.more_visits', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('shop.sections.lasted', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('shop.sections.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="Mateu, export, eCommerce">
+    <meta name="robots" content="all">
+
+    <title><?php echo $__env->yieldContent('title'); ?></title>
+
+    <!-- Bootstrap Core CSS -->
+    <?php echo HTML::style('shop/assets/css/bootstrap.min.css'); ?>
+
+
+
+    <!-- Customizable CSS -->
+    <?php echo HTML::style('shop/assets/css/main.css'); ?>
+
+    <?php echo HTML::style('shop/assets/css/dark-green.css'); ?>
+
+    <?php echo HTML::style('shop/assets/css/owl.carousel.css'); ?>
+
+    <?php echo HTML::style('shop/assets/css/owl.transitions.css'); ?>
+
+    <?php echo HTML::style('shop/assets/css/animate.min.css'); ?>
+
+
+
+
+    <!-- Fonts
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'> -->
+
+    <!-- Icons/Glyphs -->
+
+    <?php echo HTML::style('shop/assets/css/font-awesome.min.css'); ?>
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="<?php echo e(url('shop/assets/images/favicon.ico')); ?>">
+
+    <!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
+    <!--[if lt IE 9]>
+
+    <?php echo HTML::script('shop/assets/js/html5shiv.js'); ?>
+
+    <?php echo HTML::script('shop/assets/js/respond.min.js'); ?>
+
+
+    <![endif]-->
+</head>
+<body>
+
+
+<div class="wrapper">
+    <?php echo $__env->yieldContent('content'); ?>
+</div><!-- /.wrapper -->
+
+<!-- For demo purposes – can be removed on production : End -->
+
+<!-- JavaScripts placed at the end of the document so the pages load faster -->
+<?php echo HTML::script('shop/assets/js/jquery-1.10.2.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/jquery-migrate-1.2.1.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/bootstrap.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/gmap3.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/bootstrap-hover-dropdown.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/owl.carousel.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/css_browser_selector.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/echo.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/jquery.easing-1.3.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/bootstrap-slider.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/jquery.raty.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/jquery.prettyPhoto.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/jquery.customSelect.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/wow.min.js'); ?>
+
+<?php echo HTML::script('shop/assets/js/scripts.js'); ?>
+
+
+
+
+</body>
+</html>

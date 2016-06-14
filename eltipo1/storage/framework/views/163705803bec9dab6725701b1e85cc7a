@@ -1,0 +1,16 @@
+
+    <div class="left-sidebar">
+        <h2>Fabricantes</h2>
+        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+            <?php foreach($categories as $cat): ?>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a class="left_category" href="<?php echo e(url('/category/'.$cat->id)); ?>"><?php echo e($cat->name); ?></a></h4>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div><!--/category-products-->
+    <div class="shipping text-center"><!--shipping-->
+        <img src="<?php echo e(url('shop/images/home/shipping.jpg')); ?>" alt="" />
+    </div><!--/shipping-->

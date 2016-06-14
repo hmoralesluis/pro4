@@ -1,0 +1,55 @@
+<section id="gaming"  class=" wow fadeInUp">
+    <div class="container">
+        <h2 class="section-title">Productos de <?php echo e($category->name); ?></h2>
+        <div class="tab-content">
+            <div id="grid-view" class="products-grid fade tab-pane in active">
+                <div class="product-grid-holder">
+                    <div class="row no-margin">
+                        <table class="table table-striped">
+                            <thead>
+                            <th> No</th>
+                            <th> Marca</th>
+                            <th> Numero de parte</th>
+                            <th> Codigo</th>
+                            <th> Descripcion</th>
+                            </thead>
+
+                            <?php for($i = 0; $i < count($products); $i++): ?>
+                                <tr>
+                                 <td> <a href="<?php echo e(url('product/details/'. $products[$i]->id)); ?>" ><?php echo e($i + 1); ?> </a></td>
+                                 <td> <?php echo e($products[$i]->mark); ?> </td>
+                                 <td> <a href="<?php echo e(url('product/details/'. $products[$i]->id)); ?>"> <?php echo e($products[$i]->part_number); ?> </a></td>
+                                 <td> <?php echo e($products[$i]->code); ?> </td>
+                                 <td> <?php echo e($products[$i]->description); ?> </td>
+                               </tr>
+                            <?php endfor; ?>
+
+                            <tfoot>
+                            <th> No</th>
+                            <th> Marca</th>
+                            <th> Numero de parte</th>
+                            <th> Codigo</th>
+                            <th> Descripcion</th>
+                            </tfoot>
+                        </table>
+                    </div><!-- /.row -->
+                </div><!-- /.product-grid-holder -->
+                <div class="pagination-holder">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12">
+                            <ul>
+                                <?php echo $products->render(); ?>
+
+                            </ul>
+                        </div>
+                    </div><!-- /.row -->
+                </div><!-- /.pagination-holder -->
+            </div><!-- /.products-grid #grid-view -->
+
+
+
+        </div><!-- /.tab-content -->
+    </div><!-- /.grid-list-products -->
+
+</section><!-- /#gaming -->

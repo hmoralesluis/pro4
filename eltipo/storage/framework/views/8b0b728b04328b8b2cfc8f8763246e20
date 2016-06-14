@@ -1,0 +1,93 @@
+<?php $__env->startSection('top_header'); ?>
+    <?php echo $__env->make('shop.sections.top', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('title'); ?>
+    Resultado de la busqueda
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('main_content'); ?>
+    <section id="gaming">
+        <div class="container">
+            <div class="grid-list-products">
+                <h2 class="section-title">Resultado de la busqueda</h2>
+
+                <?php if(count($errors) > 0): ?>
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> No puede realizar la busqueda<br><br>
+                        <ul>
+                            <?php foreach($errors->all() as $error): ?>
+                                <li><?php echo e($error); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+
+
+                <?php else: ?>
+                    <?php if(count($products) == 0): ?>
+                        <p> Lo sentimos no existe ningun producto que coincida con el criterio de busqueda</p>
+                    <?php else: ?>
+                        <div class="tab-content">
+
+                            <div id="list-view" class="products-grid fade tab-pane in active ">
+                                <div class="products-list">
+
+                                    <?php foreach($products as $prod): ?>
+                                        <div class="product-item product-item-holder">
+                                            <div class="row">
+                                                <div class="no-margin col-xs-12 col-sm-4 image-holder">
+                                                    <div class="image">
+                                                        <img class="product_image" src="<?php echo e(url('catalog/images/' . $prod->image)); ?>" alt=" " />
+                                                    </div>
+                                                </div><!-- /.image-holder -->
+                                                <div class="no-margin col-xs-12 col-sm-8 body-holder">
+                                                    <div class="body">
+
+                                                        <div class="title">
+                                                            <a href="<?php echo e(url('product/details/'. $prod->id)); ?>"><?php echo e($prod->part_number); ?></a>
+                                                        </div>
+                                                        <div class="brand"><?php echo e($prod->mark); ?></div>
+                                                        <div class="excerpt">
+                                                            <p><?php echo e($prod->description); ?></p>
+                                                        </div>
+                                                        <div class="addto-compare">
+                                                            <a class="le-button" href="#">Detalles</a>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- /.body-holder -->
+                                            </div><!-- /.row -->
+                                        </div><!-- /.product-item -->
+                                    <?php endforeach; ?>
+
+
+
+
+                                </div><!-- /.products-list -->
+
+                                <div class="pagination-holder">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 text-left">
+                                            <ul>
+                                                <?php echo $products->render(); ?>
+
+                                            </ul><!-- /.pagination -->
+                                        </div>
+                                    </div><!-- /.row -->
+                                </div><!-- /.pagination-holder -->
+
+                            </div><!-- /.products-grid #list-view -->
+
+                        </div><!-- /.tab-content -->
+                    <?php endif; ?>
+            </div><!-- /.grid-list-products -->
+        </div>
+
+        <?php endif; ?>
+
+    </section><!-- /#gaming -->
+    <?php echo $__env->make('shop.sections.lasted', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('shop.sections.more_visits', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php $__env->stopSection(); ?>
+
+
+<?php echo $__env->make('shop.sections.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
