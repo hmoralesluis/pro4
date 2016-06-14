@@ -12,6 +12,8 @@ $pass =  "";
 $database = "trialconnector";
 
 
+
+
 function sendEmailforTrial($data){
     $fullname = $data['name'];
     $email = $data['email'];
@@ -36,10 +38,8 @@ function errorsRegister($msg, $print = false){
     if($print) print_r($msg);
 }
 
-
 //--------------------Open database connection-------------------------
 $con = mysqli_connect($host,$user,$pass,$database) or errorsRegister('Database connection failed');
-
 
 $memtriconditions = array();
 
@@ -61,7 +61,6 @@ while($linemember = mysqli_fetch_assoc($listmembers) ){
 
         while($linememberconditions = mysqli_fetch_assoc($listmemberconditions)){
             $find = false;
-
             //--------------Load conditions_id elements from trial_condition table-----------
             $querytrialconditions = "SELECT condition_id FROM trial_condition WHERE trial_id = {$linetrial['id']}";
             $listtrialconditions = $con->query($querytrialconditions) or registrar_errores('Query to the table trial_condition failed');
@@ -69,7 +68,6 @@ while($linemember = mysqli_fetch_assoc($listmembers) ){
             while($linetrialconditions = mysqli_fetch_assoc($listtrialconditions)){
 
                 //----------Compare conditions and save the equal relations---------------
-
                 if($linememberconditions['condition_id'] == $linetrialconditions['condition_id']){
                     $aux = array(
                         'member' => $linemember['id'],
@@ -84,7 +82,6 @@ while($linemember = mysqli_fetch_assoc($listmembers) ){
         }
     }
 }
-
 
 //-----------------Search in the array with the relations between members and trials--------------
 foreach($memtriconditions as $mtc){
@@ -110,25 +107,28 @@ foreach($memtriconditions as $mtc){
 
             if(mysqli_num_rows($listinsertmemprecheck) == 0){
                 //----------------Insert the prescreening for the member-----------------
-
                 $queryinsertmempre = "INSERT INTO member_prescreening (member_id, prescreening_id, deleted, answered) VALUES ({$mtc['member']},{$lineprescreening['id']},0,0)";
                 $con->query($queryinsertmempre) or registrar_errores('Insertion in the member_prescreening table failed');
 
-                //----Prepare data for the mail
+                //----Loading Mail Data-----------
+                //------Select the member data-------
                 $querygetmemberdata = "SELECT fullname, email FROM member WHERE id = {$mtc['member']}";
                 $listgetmemberdata = $con->query($querygetmemberdata) or registrar_errores('Query to the table member failed');
-                $linememberdata = mysql_fetch_assoc($listgetmemberdata);
+                $linememberdata = mysqli_fetch_assoc($listgetmemberdata);
 
-
+                //------Select the trial data-----------
                 $querygettrial= "SELECT title FROM trial WHERE id = {$mtc['trial']}";
                 $listgettrial = $con->query($querygettrial) or registrar_errores('Query to the table trial failed');
-                $linegettrial = mysql_fetch_assoc($listgettrial);
+                $linegettrial = mysqli_fetch_assoc($listgettrial);
 
+                //-------------Save data in the array-------------
                 $data = array(
                     'name' => $linememberdata['fullname'],
                     'email' => $linememberdata['email'],
                     'trialname' => $linegettrial['title']
                 );
+
+                //-----Call function for send the email---------------
                 sendEmailforTrial($data);
 
             }
