@@ -1,0 +1,24 @@
+;Configuraciones;;icon-cogs
+1;Planes de Beneficio;;
+1;Tipo de Productos;config_producttype;
+1;Tipo de Transacciones;config_transactiontype;
+1;Tipo de Notificaciones;config_notificationtype;
+1;Países;config_country;
+;Gestión de Contenido;management_contentblock;icon-edit
+7;Bloque Carousel;;
+7;Bloque Concept;;
+7;Bloque Features;;
+7;Bloque Intro;;
+7;Bloque Maps;;
+7;Bloque Marketing;;
+7;Bloque Products;;
+;Zona Personal;management_user_show;icon-user
+;Inicio;management;icon-home
+;Negocios;;icon-briefcase
+17;Oportunidad de Negocios;;
+17;Red de Negocios;management_user_network;
+17;Expandir su Negocio;;
+17;Compartir en Redes Sociales;;
+;Banco Personal;;icon-credit-card
+22;Transacciones;management_transaction;
+22;Retirar Fondos;;

@@ -1,0 +1,35 @@
+<?php
+
+namespace App\AdminBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="App\AdminBundle\Entity\ModuleOptionRepository")
+ * @ORM\Table(name="moduleoption_tb")
+ */
+
+class ModuleOption
+{
+
+    /**
+     * @ORM\id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
+     */
+
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+
+    private $name;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\AdminBundle\Entity\Module")
+     */
+    private $module;
+
+
+}
