@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - app@localhost" uuid="32bfc1c4-bf01-4a70-9e70-bae362afda23">
+    <database-info product="MySQL" version="5.0.45-community-nt" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.24 ( Revision: ${bzr.revision-id} )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="app"/>
+    <table name="benefitplan_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="percentage" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="content_producttype_tb" schema="" catalog="app" type="TABLE">
+      <column name="content_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="productType_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="content_id,productType_id"/>
+      <foreign-key name="FK_ED5A20D591BE1328" columns="productType_id" ref-table="producttype_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ED5A20D584A0A3ED" columns="content_id" ref-table="modulecontent_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_ED5A20D584A0A3ED" unique="false" columns="content_id"/>
+      <index name="IDX_ED5A20D591BE1328" unique="false" columns="productType_id"/>
+    </table>
+    <table name="contentblock_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="position" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="country_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="alpha_2_code" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="alpha_3_code" sqlType="VARCHAR" precision="3" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="numeric_code" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_B1611ABCF92F3E70" table="user_tb" schema="" catalog="app" columns="country_id"/>
+    </table>
+    <table name="description_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fast_text" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="text" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_1B905F424584665A" columns="product_id" ref-table="product_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_94FE73DDD9F966B" table="language_tb" schema="" catalog="app" columns="description_id"/>
+      <index name="IDX_1B905F424584665A" unique="false" columns="product_id"/>
+    </table>
+    <table name="language_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="alpha2Code" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_94FE73DDD9F966B" columns="description_id" ref-table="description_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_94FE73DDD9F966B" unique="false" columns="description_id"/>
+    </table>
+    <table name="module_product_tb" schema="" catalog="app" type="TABLE">
+      <column name="module_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="module_id,product_id"/>
+      <foreign-key name="FK_C66E84EE4584665A" columns="product_id" ref-table="product_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_C66E84EEAFC2B591" columns="module_id" ref-table="module_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_C66E84EEAFC2B591" unique="false" columns="module_id"/>
+      <index name="IDX_C66E84EE4584665A" unique="false" columns="product_id"/>
+    </table>
+    <table name="module_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="cost" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="activeDays" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_C66E84EEAFC2B591" table="module_product_tb" schema="" catalog="app" columns="module_id"/>
+      <exported-key name="FK_CA0FD7C1AFC2B591" table="modulecontent_tb" schema="" catalog="app" columns="module_id"/>
+      <exported-key name="FK_B92DF15CAFC2B591" table="user_module_tb" schema="" catalog="app" columns="module_id"/>
+    </table>
+    <table name="modulecontent_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="module_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="productsLimitPrice" sqlType="DOUBLE" precision="22" scale="0" nullable="true" jdbcType="8"/>
+      <column name="cantByProductType" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_CA0FD7C1AFC2B591" columns="module_id" ref-table="module_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_ED5A20D584A0A3ED" table="content_producttype_tb" schema="" catalog="app" columns="content_id"/>
+      <index name="UNIQ_CA0FD7C1AFC2B591" unique="true" columns="module_id"/>
+    </table>
+    <table name="modulesale_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="userModule_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_C0FC1F71E37E9652" columns="userModule_id" ref-table="user_module_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_C0FC1F71E37E9652" unique="false" columns="userModule_id"/>
+    </table>
+    <table name="notification_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="notificationType_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_F91554AD3765ACD1" columns="notificationType_id" ref-table="notificationtype_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_A47F900BEF1A9D84" table="notification_user_tb" schema="" catalog="app" columns="notification_id"/>
+      <index name="IDX_F91554AD3765ACD1" unique="false" columns="notificationType_id"/>
+    </table>
+    <table name="notification_user_tb" schema="" catalog="app" type="TABLE">
+      <column name="notification_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="notification_id,user_id"/>
+      <foreign-key name="FK_A47F900BA76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_A47F900BEF1A9D84" columns="notification_id" ref-table="notification_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_A47F900BEF1A9D84" unique="false" columns="notification_id"/>
+      <index name="IDX_A47F900BA76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="notificationtype_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_F91554AD3765ACD1" table="notification_tb" schema="" catalog="app" columns="notificationType_id"/>
+    </table>
+    <table name="option_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="path" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="icon" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="asociatedOption_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_B1CBD44650553D07" columns="asociatedOption_id" ref-table="option_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_B1CBD44650553D07" table="option_tb" schema="" catalog="app" columns="asociatedOption_id"/>
+      <exported-key name="FK_E03F079AA7C41D6F" table="role_option_tb" schema="" catalog="app" columns="option_id"/>
+      <index name="UNIQ_B1CBD4465E237E06" unique="true" columns="name"/>
+      <index name="UNIQ_B1CBD446B548B0F" unique="true" columns="path"/>
+      <index name="IDX_B1CBD44650553D07" unique="false" columns="asociatedOption_id"/>
+    </table>
+    <table name="product_role_tb" schema="" catalog="app" type="TABLE">
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="product_id,role_id"/>
+      <foreign-key name="FK_11D5F035D60322AC" columns="role_id" ref-table="role_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_11D5F0354584665A" columns="product_id" ref-table="product_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_11D5F0354584665A" unique="false" columns="product_id"/>
+      <index name="IDX_11D5F035D60322AC" unique="false" columns="role_id"/>
+    </table>
+    <table name="product_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="count" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="productType_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_538BAF73A76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_538BAF7391BE1328" columns="productType_id" ref-table="producttype_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_1B905F424584665A" table="description_tb" schema="" catalog="app" columns="product_id"/>
+      <exported-key name="FK_C66E84EE4584665A" table="module_product_tb" schema="" catalog="app" columns="product_id"/>
+      <exported-key name="FK_11D5F0354584665A" table="product_role_tb" schema="" catalog="app" columns="product_id"/>
+      <exported-key name="FK_8831EFA4584665A" table="productsale_tb" schema="" catalog="app" columns="product_id"/>
+      <index name="IDX_538BAF7391BE1328" unique="false" columns="productType_id"/>
+      <index name="IDX_538BAF73A76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="productsale_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_8831EFA4584665A" columns="product_id" ref-table="product_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UNIQ_8831EFA4584665A" unique="true" columns="product_id"/>
+    </table>
+    <table name="producttype_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_ED5A20D591BE1328" table="content_producttype_tb" schema="" catalog="app" columns="productType_id"/>
+      <exported-key name="FK_538BAF7391BE1328" table="product_tb" schema="" catalog="app" columns="productType_id"/>
+    </table>
+    <table name="role_option_tb" schema="" catalog="app" type="TABLE">
+      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="option_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="role_id,option_id"/>
+      <foreign-key name="FK_E03F079AA7C41D6F" columns="option_id" ref-table="option_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_E03F079AD60322AC" columns="role_id" ref-table="role_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_E03F079AD60322AC" unique="false" columns="role_id"/>
+      <index name="IDX_E03F079AA7C41D6F" unique="false" columns="option_id"/>
+    </table>
+    <table name="role_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="role" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="FK_11D5F035D60322AC" table="product_role_tb" schema="" catalog="app" columns="role_id"/>
+      <exported-key name="FK_E03F079AD60322AC" table="role_option_tb" schema="" catalog="app" columns="role_id"/>
+      <exported-key name="FK_B1611ABCD60322AC" table="user_tb" schema="" catalog="app" columns="role_id"/>
+      <index name="UNIQ_C00CEB855E237E06" unique="true" columns="name"/>
+      <index name="UNIQ_C00CEB8557698A6A" unique="true" columns="role"/>
+    </table>
+    <table name="transaction_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_39CF0226A76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_39CF0226A76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="user_module_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="module_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="activationDate" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_B92DF15CAFC2B591" columns="module_id" ref-table="module_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B92DF15CA76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_C0FC1F71E37E9652" table="modulesale_tb" schema="" catalog="app" columns="userModule_id"/>
+      <index name="IDX_B92DF15CA76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_B92DF15CAFC2B591" unique="false" columns="module_id"/>
+    </table>
+    <table name="user_tb" schema="" catalog="app" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="country_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="salt" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="contact_phone" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="skype" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="whatsapp" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="google" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sign_up_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="position_in_generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="photo_extension" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="active" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="asociatedUser_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_B1611ABC692A0F87" columns="asociatedUser_id" ref-table="user_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B1611ABCD60322AC" columns="role_id" ref-table="role_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B1611ABCF92F3E70" columns="country_id" ref-table="country_tb" ref-schema="" ref-catalog="app" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_A47F900BA76ED395" table="notification_user_tb" schema="" catalog="app" columns="user_id"/>
+      <exported-key name="FK_538BAF73A76ED395" table="product_tb" schema="" catalog="app" columns="user_id"/>
+      <exported-key name="FK_39CF0226A76ED395" table="transaction_tb" schema="" catalog="app" columns="user_id"/>
+      <exported-key name="FK_B92DF15CA76ED395" table="user_module_tb" schema="" catalog="app" columns="user_id"/>
+      <exported-key name="FK_B1611ABC692A0F87" table="user_tb" schema="" catalog="app" columns="asociatedUser_id"/>
+      <index name="UNIQ_B1611ABCF85E0677" unique="true" columns="username"/>
+      <index name="IDX_B1611ABCF92F3E70" unique="false" columns="country_id"/>
+      <index name="IDX_B1611ABCD60322AC" unique="false" columns="role_id"/>
+      <index name="IDX_B1611ABC692A0F87" unique="false" columns="asociatedUser_id"/>
+    </table>
+  </data-source>
+</component>
