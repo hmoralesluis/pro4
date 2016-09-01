@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - netviralpro@localhost" uuid="743d3f0c-417d-4255-9c5e-3dfe2befc588">
+    <database-info product="MySQL" version="5.0.45-community-nt" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.24 ( Revision: ${bzr.revision-id} )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="netviralpro"/>
+    <table name="audios_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="path" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_F444123C5E237E06" unique="true" columns="name"/>
+    </table>
+    <table name="bank_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="code" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="money" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="lastUpdate" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="benefittable_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="compensationplan_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="percentage" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="conference_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="author" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="time" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92" def="Jyc="/>
+      <column name="language" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="duration" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="path" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_76444AAB2B36786B" unique="true" columns="title"/>
+    </table>
+    <table name="contentblock_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="position" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_ADD411BD5E237E06" unique="true" columns="name"/>
+      <index name="UNIQ_ADD411BD462CE4F5" unique="true" columns="position"/>
+    </table>
+    <table name="country_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="alpha_2_code" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="alpha_3_code" sqlType="VARCHAR" precision="3" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="numeric_code" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="description_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fast_text" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="text" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_1B905F424584665A" columns="product_id" ref-table="product_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_1B905F424584665A" unique="false" columns="product_id"/>
+    </table>
+    <table name="ebooks_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="path" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_FE086A255E237E06" unique="true" columns="name"/>
+    </table>
+    <table name="language_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="description_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="alpha2Code" sqlType="VARCHAR" precision="2" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_94FE73DDD9F966B" columns="description_id" ref-table="description_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_94FE73DDD9F966B" unique="false" columns="description_id"/>
+    </table>
+    <table name="message_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sender" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="receptor" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="asunto" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="body" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="state" sqlType="VARCHAR" precision="1" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="module_product_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="module_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="module_id,product_id"/>
+      <foreign-key name="FK_C66E84EE4584665A" columns="product_id" ref-table="product_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_C66E84EEAFC2B591" columns="module_id" ref-table="module_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_C66E84EEAFC2B591" unique="false" columns="module_id"/>
+      <index name="IDX_C66E84EE4584665A" unique="false" columns="product_id"/>
+    </table>
+    <table name="module_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="optionPath" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="longDescription" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="cost" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="activeDays" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="onBody" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="moduleoption_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="module_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_FBCB42D8AFC2B591" columns="module_id" ref-table="module_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_FBCB42D8AFC2B591" unique="false" columns="module_id"/>
+    </table>
+    <table name="notification_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="image" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="label" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="notification_user_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="notification_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="notification_id,user_id"/>
+      <foreign-key name="FK_A47F900BA76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_A47F900BEF1A9D84" columns="notification_id" ref-table="notification_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_A47F900BEF1A9D84" unique="false" columns="notification_id"/>
+      <index name="IDX_A47F900BA76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="notificationtype_notification_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="notification_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="notificationType_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="notificationType_id,notification_id"/>
+      <foreign-key name="FK_22A9D2373765ACD1" columns="notificationType_id" ref-table="notificationtype_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_22A9D237EF1A9D84" columns="notification_id" ref-table="notification_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_22A9D2373765ACD1" unique="false" columns="notificationType_id"/>
+      <index name="IDX_22A9D237EF1A9D84" unique="false" columns="notification_id"/>
+    </table>
+    <table name="notificationtype_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="icon" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="color" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="amount" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="onBody" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="option_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="path" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="icon" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="asociatedOption_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_B1CBD44650553D07" columns="asociatedOption_id" ref-table="option_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UNIQ_B1CBD4465E237E06" unique="true" columns="name"/>
+      <index name="UNIQ_B1CBD446B548B0F" unique="true" columns="path"/>
+      <index name="IDX_B1CBD44650553D07" unique="false" columns="asociatedOption_id"/>
+    </table>
+    <table name="product_role_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="product_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="product_id,role_id"/>
+      <foreign-key name="FK_11D5F0354584665A" columns="product_id" ref-table="product_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_11D5F035D60322AC" columns="role_id" ref-table="role_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_11D5F0354584665A" unique="false" columns="product_id"/>
+      <index name="IDX_11D5F035D60322AC" unique="false" columns="role_id"/>
+    </table>
+    <table name="product_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="count" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="price" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="productType_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_538BAF7391BE1328" columns="productType_id" ref-table="producttype_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_538BAF73A76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_538BAF7391BE1328" unique="false" columns="productType_id"/>
+      <index name="IDX_538BAF73A76ED395" unique="false" columns="user_id"/>
+    </table>
+    <table name="producttype_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="role_option_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="option_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="role_id,option_id"/>
+      <foreign-key name="FK_E03F079AA7C41D6F" columns="option_id" ref-table="option_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_E03F079AD60322AC" columns="role_id" ref-table="role_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_E03F079AD60322AC" unique="false" columns="role_id"/>
+      <index name="IDX_E03F079AA7C41D6F" unique="false" columns="option_id"/>
+    </table>
+    <table name="role_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="30" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="isPayment" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <column name="role" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_C00CEB855E237E06" unique="true" columns="name"/>
+      <index name="UNIQ_C00CEB8557698A6A" unique="true" columns="role"/>
+    </table>
+    <table name="software_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="path" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="plataform" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="activation_code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_C14AEE685E237E06" unique="true" columns="name"/>
+    </table>
+    <table name="transaction_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nickname" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="money" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="module" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="transactionType_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_39CF022685BF20CC" columns="transactionType_id" ref-table="transactiontype_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_39CF0226A76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_39CF0226A76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_39CF022685BF20CC" unique="false" columns="transactionType_id"/>
+    </table>
+    <table name="transactiontype_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="UNIQ_93B0E9E55E237E06" unique="true" columns="name"/>
+    </table>
+    <table name="user_module_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="module_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="activationDate" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_B92DF15CA76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B92DF15CAFC2B591" columns="module_id" ref-table="module_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_B92DF15CA76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_B92DF15CAFC2B591" unique="false" columns="module_id"/>
+    </table>
+    <table name="user_notificationtype_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="notificationtype_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="user_id,notificationtype_id"/>
+      <foreign-key name="FK_C4143316A76ED395" columns="user_id" ref-table="user_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_C4143316F8D8954D" columns="notificationtype_id" ref-table="notificationtype_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="IDX_C4143316A76ED395" unique="false" columns="user_id"/>
+      <index name="IDX_C4143316F8D8954D" unique="false" columns="notificationtype_id"/>
+    </table>
+    <table name="user_tb" schema="" catalog="netviralpro" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="country_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="last_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="sex" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="salt" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="contact_phone" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="skype" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="whatsapp" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="twitter" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="google" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sign_up_date" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91" def="Jyc="/>
+      <column name="birthday" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="position_in_generation" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="photo_extension" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="about" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="active" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="associatedUser_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="directBenefitTable_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="indirectBenefitTable_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="bankAccount_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_B1611ABC83BD4BA0" columns="indirectBenefitTable_id" ref-table="benefittable_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B1611ABCA59FDBB1" columns="directBenefitTable_id" ref-table="benefittable_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B1611ABCD60322AC" columns="role_id" ref-table="role_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B1611ABCD9BA32DF" columns="associatedUser_id" ref-table="user_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B1611ABCEA47ABEE" columns="bankAccount_id" ref-table="bank_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_B1611ABCF92F3E70" columns="country_id" ref-table="country_tb" ref-schema="" ref-catalog="netviralpro" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="UNIQ_B1611ABCF85E0677" unique="true" columns="username"/>
+      <index name="UNIQ_B1611ABCEA47ABEE" unique="true" columns="bankAccount_id"/>
+      <index name="IDX_B1611ABCF92F3E70" unique="false" columns="country_id"/>
+      <index name="IDX_B1611ABCD60322AC" unique="false" columns="role_id"/>
+      <index name="IDX_B1611ABCD9BA32DF" unique="false" columns="associatedUser_id"/>
+      <index name="IDX_B1611ABCA59FDBB1" unique="false" columns="directBenefitTable_id"/>
+      <index name="IDX_B1611ABC83BD4BA0" unique="false" columns="indirectBenefitTable_id"/>
+    </table>
+  </data-source>
+</component>
